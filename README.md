@@ -44,7 +44,7 @@ The `BiginForm` component supports:
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/stepupidiomas.git
+git clone https://github.com/StepUpMontijo/stepup-website.git
 cd stepupidiomas
 ```
 
