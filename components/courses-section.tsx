@@ -57,8 +57,6 @@ export default async function CoursesSection({ locale }: PageProps) {
         {/* Courses grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => {
-            console.log("Course:", course);
-            console.log("T:", t(`${course.key}.title`));
             return (
               <div
                 key={course.key}
