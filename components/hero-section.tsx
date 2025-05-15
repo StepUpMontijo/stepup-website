@@ -55,27 +55,48 @@ const TypewriterEffect = ({
   }, [currentText, currentWordIndex, isDeleting, words, typingSpeed]);
 
   return (
-    <div className="flex flex-col items-center">
-      {/* Primeira linha com o texto dinâmico */}
-      <div className="flex items-center mb-2 whitespace-nowrap overflow-hidden">
-        <span className="text-white font-bold text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-          {baseTextFirst}
-        </span>
-        <motion.span
-          className="relative mx-2 font-bold text-[#00a2ff] text-shadow-lg whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-          animate={{ opacity: [1, 0.9, 1] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          {currentText}
-          {/* Cursor vertical piscante */}
-          <span className="absolute right-[-4px] top-0 h-full w-[3px] bg-[#00a2ff] animate-blink drop-shadow-md"></span>
-        </motion.span>
+    <div className="flex flex-col items-center justify-center w-full">
+      {/* Main container - layout adaptable for all sizes */}
+      <div className="flex flex-col text-center w-full">
+        {/* Container with dynamic height to avoid jumps */}
+        <div className="relative min-h-[3em] md:min-h-[1.5em] flex flex-col items-center justify-center mb-1 md:mb-2">
+          {/* Layout adaptable for all screen sizes */}
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+            <span className="text-white font-bold text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+              {baseTextFirst}
+            </span>
+
+            <div className="inline-flex items-center relative">
+              <motion.span
+                className="font-bold text-[#00a2ff] text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                animate={{ opacity: [1, 0.9, 1] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                {currentText}
+              </motion.span>
+              {/* Vertical blinking cursor that follows the text */}
+              <span className="inline-block h-full w-[2px] md:w-[3px] bg-[#00a2ff] animate-blink ml-[1px]"></span>
+            </div>
+          </div>
+        </div>
+
+        {/* Second line adaptable */}
+        <div className="text-white font-bold text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] min-h-[1.2em] text-center -mt-1 md:mt-0">
+          {baseTextSecond}
+        </div>
       </div>
 
-      {/* Segunda linha com o resto do texto */}
-      <div className="text-white font-bold text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-        {baseTextSecond}
-      </div>
+      {/* Specific styles for different screen sizes */}
+      <style jsx global>{`
+        /* Specific styles for tablets */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .text-[#00a2ff] {
+            max-width: 100%;
+            font-size: 0.95em;
+            word-break: break-word;
+          }
+        }
+      `}</style>
     </div>
   );
 };
@@ -165,15 +186,15 @@ export default function HeroSection() {
 
       {/* Hero content - centered */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none">
-        <div className="text-center max-w-4xl px-4">
+        <div className="text-center w-full max-w-[80%] px-4 sm:px-6 md:px-8">
           {/* Main title - text with shadow for readability */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className="mb-6 md:mb-8 w-full flex justify-center items-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold select-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold select-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] w-full">
               <TypewriterEffect
                 words={typingWords[locale as "pt" | "en"]}
                 baseTextFirst={baseTextFirst[locale as "pt" | "en"]}
@@ -187,9 +208,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-lg shadow-md inline-block mb-8"
+            className="bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 rounded-lg shadow-md inline-block mb-6 md:mb-8 mx-4"
           >
-            <p className="text-xl md:text-2xl font-medium select-none text-[#2b085c]">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium select-none text-[#2b085c]">
               {t("hero.subtitle")}
             </p>
           </motion.div>
@@ -199,7 +220,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -236,7 +257,7 @@ export default function HeroSection() {
 
               <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-800 hover:from-blue-500 hover:to-indigo-700 text-white py-4 px-8 rounded-[8px] font-medium shadow-md z-[2]"
+                className="relative inline-flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-800 hover:from-blue-500 hover:to-indigo-700 text-white py-3 px-6 sm:px-8 rounded-[8px] font-medium shadow-md z-[2] text-sm sm:text-base"
                 aria-label={t("hero.cta")}
               >
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out bg-white rounded-[8px] opacity-0 group-hover:opacity-10"></span>
@@ -270,7 +291,7 @@ export default function HeroSection() {
             >
               <Link
                 href="/about"
-                className="relative inline-flex items-center justify-center overflow-hidden bg-white border border-gray-200 hover:border-blue-300 text-indigo-800 py-4 px-8 rounded-xl font-medium shadow-md group"
+                className="relative inline-flex items-center justify-center overflow-hidden bg-white border border-gray-200 hover:border-blue-300 text-indigo-800 py-3 px-6 sm:px-8 rounded-xl font-medium shadow-md group text-sm sm:text-base"
                 aria-label={t("about.cta")}
               >
                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out bg-blue-100 rounded-xl opacity-0 group-hover:opacity-20"></span>
