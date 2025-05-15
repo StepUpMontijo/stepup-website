@@ -1,27 +1,27 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { motion, useAnimation } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import HandwrittenUnderline from "@/components/handwritten-underline";
 import { useIsMounted } from "@/hooks/useIsMounted";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function TestimonialsCarousel() {
   const t = useTranslations("HomePage.testimonials");
   const isMounted = useIsMounted();
-  const [isPaused, setIsPaused] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStartX, setDragStartX] = useState(0);
-  const [dragOffset, setDragOffset] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimation();
-  const [currentPosition, setCurrentPosition] = useState(0);
-  const animationDuration = 60; // seconds
-  const animationDistance = 3000; // pixels
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
-  // Total of testimonials available in translations
+  // Mobile carousel state
+  const [activeIndex, setActiveIndex] = useState(0);
   const totalTestimonials = 10;
+
+  // Desktop carousel state
+  const containerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(0);
+  const [cardWidth, setCardWidth] = useState(326); // Largura do card + margens
 
   // Function to get the initials of the name
   const getInitials = (name: string) => {
@@ -31,47 +31,6 @@ export default function TestimonialsCarousel() {
       .join("")
       .toUpperCase();
   };
-
-  // Function to start the animation
-  const startAnimation = useCallback(() => {
-    // Calculate the speed in pixels per second
-    const pixelsPerSecond = animationDistance / animationDuration;
-
-    // Calculate how much time it would take to travel the current distance to the end
-    const remainingDistance = animationDistance + currentPosition; // Considering that currentPosition is negative when moving to the left
-    const remainingTime = remainingDistance / pixelsPerSecond;
-
-    controls.start({
-      x: -animationDistance,
-      transition: {
-        x: {
-          from: currentPosition,
-          duration: remainingTime,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop",
-        },
-      },
-    });
-  }, [animationDistance, animationDuration, currentPosition, controls]);
-
-  // Effect to start the animation when the component mounts
-  useEffect(() => {
-    // We no longer need to check if it is mounted
-    // Start the animation when the component mounts
-    startAnimation();
-  }, [startAnimation]);
-
-  // Effect to pause/continue the animation
-  useEffect(() => {
-    if (isPaused && !isDragging) {
-      // Pause the animation only if not dragging
-      controls.stop();
-    } else if (!isPaused) {
-      // Continue the animation from where it stopped
-      startAnimation();
-    }
-  }, [isPaused, isDragging, controls, startAnimation]);
 
   // Function to generate a background color based on the name
   const getColorFromName = (name: string) => {
@@ -88,121 +47,119 @@ export default function TestimonialsCarousel() {
       "bg-amber-500",
     ];
 
-    // Use the sum of the ASCII codes of the letters of the name to determine the color
     const sum = name
       .split("")
       .reduce((acc, char) => acc + char.charCodeAt(0), 0);
     return colors[sum % colors.length];
   };
 
-  // Event handlers for dragging
-  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-    // Prevent text selection when dragging
-    e.preventDefault();
-
-    setIsDragging(true);
-    setIsPaused(true);
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    setDragStartX(clientX);
-  };
-
-  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (dragStartX === 0 || !isDragging) return;
-
-    // Prevent text selection when dragging
-    e.preventDefault();
-
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const diff = clientX - dragStartX;
-    setDragOffset(diff);
-
-    // Update the position in real time during the drag
-    controls.set({ x: currentPosition + diff });
-  };
-
-  const handleDragEnd = () => {
-    if (dragStartX === 0 || !isDragging) return;
-
-    // Update the current position with the drag offset
-    const newPosition = currentPosition + dragOffset;
-    setCurrentPosition(newPosition);
-    setDragStartX(0);
-    setDragOffset(0);
-    setIsDragging(false);
-
-    if (!isPaused) return; // If the user has already moved the mouse outside, do nothing
-    setIsPaused(false);
-  };
-
-  // Event handlers for mouse enter/leave
-  const handleMouseEnter = () => {
-    if (isDragging) return; // Do not pause if dragging
-    setIsPaused(true);
-  };
-
-  const handleMouseLeave = () => {
-    if (isDragging) return; // Do not continue if dragging
-    setIsPaused(false);
-  };
-
-  // Function to update the current position when the animation is in progress
+  // Measure card width
   useEffect(() => {
-    if (isPaused) return;
+    if (!isMounted) return;
 
-    // Update the current position periodically to track the progress of the animation
-    const interval = setInterval(() => {
-      // Calculate the speed in pixels per second
-      const pixelsPerSecond = animationDistance / animationDuration;
-
-      // Update the position based on the elapsed time
-      setCurrentPosition((prev) => {
-        // If it has reached the end, restart
-        if (prev <= -animationDistance) {
-          return 0;
-        }
-        // Otherwise, continue moving
-        return prev - pixelsPerSecond * 0.1; // 0.1 second = interval
-      });
-    }, 100); // Update every 100ms
-
-    return () => clearInterval(interval);
-  }, [isPaused, animationDistance, animationDuration]);
-
-  // Add global listener to detect when the mouse is released outside the component
-  useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      if (isDragging) {
-        setIsDragging(false);
-        setDragStartX(0);
-        setDragOffset(0);
-
-        if (!isPaused) return;
-        setIsPaused(false);
+    const updateCardWidth = () => {
+      if (carouselRef.current && carouselRef.current.children.length > 0) {
+        const firstCard = carouselRef.current.children[0] as HTMLElement;
+        const computedStyle = window.getComputedStyle(firstCard);
+        const width =
+          firstCard.offsetWidth +
+          parseInt(computedStyle.marginLeft) +
+          parseInt(computedStyle.marginRight);
+        setCardWidth(width);
       }
     };
 
-    window.addEventListener("mouseup", handleGlobalMouseUp);
-    window.addEventListener("touchend", handleGlobalMouseUp);
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
 
     return () => {
-      window.removeEventListener("mouseup", handleGlobalMouseUp);
-      window.removeEventListener("touchend", handleGlobalMouseUp);
+      window.removeEventListener("resize", updateCardWidth);
     };
-  }, [isDragging, isPaused]);
+  }, [isMounted]);
 
-  if (!isMounted) return null;
+  // Infinite and continuous auto-scroll
+  useEffect(() => {
+    if (!isMounted || isMobile) return;
 
-  // Create a duplicated list of testimonials for the infinite effect
-  const testimonialCards = [...Array(totalTestimonials * 2)].map((_, i) => {
-    const index = i % totalTestimonials;
+    // Constant speed for smooth movement
+    const pixelsPerSecond = 30; // Adjust to desired speed
+    let lastTimestamp = 0;
+    let animationId: number;
+
+    const animate = (timestamp: number) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+
+      const elapsed = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      // Ensure we don't have extreme values after tab change, etc.
+      const delta = (Math.min(elapsed, 100) * pixelsPerSecond) / 1000;
+
+      setPosition((prev) => {
+        // New position based on speed and elapsed time
+        let newPos = prev - delta;
+
+        // Check if we've passed the end of the first set of cards
+        if (newPos < -(cardWidth * totalTestimonials)) {
+          // Calculate the excess beyond the limit
+          const overflow = newPos + cardWidth * totalTestimonials;
+
+          // Move to the start of the second set, preserving exactly the same relative position for perfect continuity
+          newPos = overflow;
+        }
+
+        return newPos;
+      });
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, [isMounted, isMobile, cardWidth, totalTestimonials]);
+
+  // Auto rotate on mobile
+  useEffect(() => {
+    if (!isMounted || !isMobile) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalTestimonials);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isMounted, isMobile, totalTestimonials]);
+
+  // Manual navigation on mobile
+  const goToNextTestimonial = () => {
+    setActiveIndex((prev) => (prev + 1) % totalTestimonials);
+  };
+
+  const goToPreviousTestimonial = () => {
+    setActiveIndex(
+      (prev) => (prev - 1 + totalTestimonials) % totalTestimonials
+    );
+  };
+
+  // Testimonial card component with responsive sizes
+  const TestimonialCard = ({
+    index,
+    isMobileView = false,
+  }: {
+    index: number;
+    isMobileView?: boolean;
+  }) => {
     const name = t(`testimonial${index + 1}.name`);
     const initials = getInitials(name);
     const colorClass = getColorFromName(name);
 
     return (
       <div
-        key={i}
-        className="flex-shrink-0 w-[300px] bg-white rounded-lg shadow-md p-6 mx-3"
+        className={`flex-shrink-0 bg-white rounded-lg shadow-md p-6 ${
+          isMobileView ? "w-full max-w-md mx-auto" : "w-[300px] mx-3"
+        }`}
       >
         <div className="flex items-center mb-4">
           <div
@@ -229,8 +186,77 @@ export default function TestimonialsCarousel() {
         </blockquote>
       </div>
     );
-  });
+  };
 
+  if (!isMounted) return null;
+
+  // Mobile version - single card with navigation
+  if (isMobile) {
+    return (
+      <section className="py-16 relative overflow-hidden bg-gradient-to-b from-white to-blue-50">
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              <HandwrittenUnderline
+                text={t("title")}
+                highlightText={t("title")}
+                delay={0.5}
+                color="#10b981"
+              />
+            </h2>
+            <p className="text-lg text-gray-600">{t("subtitle")}</p>
+          </div>
+
+          <div className="relative px-4 sm:px-8 max-w-md mx-auto">
+            {/* Navigation buttons */}
+            <button
+              onClick={goToPreviousTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center bg-white/80 rounded-full shadow-md"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
+
+            <button
+              onClick={goToNextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center bg-white/80 rounded-full shadow-md"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
+
+            {/* Testimonial card */}
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              className="mx-auto"
+            >
+              <TestimonialCard index={activeIndex} isMobileView={true} />
+            </motion.div>
+
+            {/* Pagination points */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {[...Array(totalTestimonials)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className={`w-2.5 h-2.5 rounded-full ${
+                    i === activeIndex ? "bg-blue-500" : "bg-gray-300"
+                  }`}
+                  aria-label={`Ir para testemunho ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop version - carousel with only infinite auto-scroll
   return (
     <section className="py-20 relative overflow-hidden bg-gradient-to-b from-white to-blue-50">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10"></div>
@@ -257,40 +283,27 @@ export default function TestimonialsCarousel() {
           <p className="text-xl text-gray-600">{t("subtitle")}</p>
         </div>
 
-        {/* Interaction indicators */}
-        <div className="flex justify-center mb-8 text-gray-500 text-sm">
-          <div className="flex items-center mr-4">
-            <span className="inline-block w-6 h-1 bg-blue-500 rounded mr-2"></span>
-            <span>{t("dragToScroll")}</span>
-          </div>
-          <div className="flex items-center">
-            <span className="inline-block w-6 h-1 bg-green-500 rounded mr-2"></span>
-            <span>{t("hoverToPause")}</span>
-          </div>
-        </div>
-
-        {/* Container with side shadows to indicate continuity */}
-        <div className="relative max-w-full mx-auto">
+        {/* Container with side shadows */}
+        <div
+          ref={containerRef}
+          className="relative max-w-full mx-auto overflow-hidden"
+        >
           <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-          {/* Container with the cards with animation */}
+          {/* Carousel with only automatic movement */}
           <div
-            ref={containerRef}
-            className="overflow-hidden select-none cursor-grab"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onMouseDown={handleDragStart}
-            onMouseMove={handleDragMove}
-            onMouseUp={handleDragEnd}
-            onTouchStart={handleDragStart}
-            onTouchMove={handleDragMove}
-            onTouchEnd={handleDragEnd}
-            onDragStart={(e) => e.preventDefault()} // Prevent default drag behavior
+            ref={carouselRef}
+            className="flex"
+            style={{ transform: `translateX(${position}px)` }}
           >
-            <motion.div className="flex" animate={controls} initial={{ x: 0 }}>
-              {testimonialCards}
-            </motion.div>
+            {/* Duplicar os cards para criar dois conjuntos idênticos */}
+            {[...Array(totalTestimonials * 2)].map((_, i) => {
+              const absoluteIndex = i % totalTestimonials;
+              return (
+                <TestimonialCard key={`card-${i}`} index={absoluteIndex} />
+              );
+            })}
           </div>
         </div>
       </div>
