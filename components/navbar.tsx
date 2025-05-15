@@ -84,7 +84,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {[
               { href: "/", label: "NavBar.home" },
               { href: "/about", label: "NavBar.about" },
@@ -150,7 +150,7 @@ export default function Navbar() {
           </div>
 
           {/* Language selector and CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             {/* Language selector */}
             <div className="relative" data-language-menu>
               <button
@@ -240,7 +240,7 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={`/${locale}/contact`}
-                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-2.5 px-5 rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
+                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-2 px-4 rounded-lg font-medium shadow-md hover:shadow-lg transition-all whitespace-normal text-center min-w-[100px] inline-block text-sm"
               >
                 {t("HomePage.hero.cta")}
               </Link>
@@ -248,7 +248,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             {/* Mobile language selector */}
             <Link
               href={`/${locale === "pt" ? "en" : "pt"}${
@@ -305,7 +305,7 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-white border-t border-gray-100 shadow-lg"
+          className="lg:hidden bg-white border-t border-gray-100 shadow-lg"
           id="mobile-menu"
           role="menu"
         >
@@ -377,7 +377,7 @@ export default function Navbar() {
             <div className="pt-3 mt-2">
               <Link
                 href={`/${locale}/contact`}
-                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-3 px-4 rounded-lg font-medium shadow-md text-center block"
+                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-2.5 px-4 rounded-lg font-medium shadow-md text-center block whitespace-normal text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("HomePage.hero.cta")}
