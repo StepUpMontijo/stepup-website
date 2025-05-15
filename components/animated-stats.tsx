@@ -18,7 +18,7 @@ const stats = [
   },
   {
     icon: Globe,
-    value: "15+",
+    value: "4",
     labelKey: "stats.teachers",
     color: "text-green-600",
   },
