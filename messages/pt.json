@@ -79,6 +79,8 @@
     },
     "courses": {
       "title": "Cursos",
+      "subtitle": "Descubra os nossos cursos e encontre o que melhor se adapta às suas necessidades.",
+      "learnMore": "Saiba Mais",
       "children": {
         "title": "Inglês para Crianças",
         "description": "O nosso programa infantil é cuidadosamente desenvolvido para introduzir o inglês de forma lúdica e interativa, respeitando o ritmo de cada criança.",

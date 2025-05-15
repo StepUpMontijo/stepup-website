@@ -79,6 +79,8 @@
     },
     "courses": {
       "title": "Courses",
+      "subtitle": "Discover our courses and find the one that best suits your needs.",
+      "learnMore": "Learn More",
       "children": {
         "title": "English for Children",
         "description": "Our children's program is carefully developed to introduce English in a playful and interactive way, respecting each child's pace.",

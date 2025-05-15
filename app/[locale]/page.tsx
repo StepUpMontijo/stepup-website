@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/features-section";
 import SchoolImages from "@/components/school-images";
 import TestimonialsCarousel from "@/components/testimonials-carousel";
 import BiginForm from "@/components/bigin-form";
+import CoursesSection from "@/components/courses-section";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -31,6 +32,7 @@ export default async function Home({ params }: PageProps) {
       <HeroSection />
       <AnimatedStats />
       <FeaturesSection />
+      <CoursesSection locale={locale} />
       <SchoolImages />
       <TestimonialsCarousel />
       <BiginForm
