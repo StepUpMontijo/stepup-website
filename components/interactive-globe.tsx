@@ -263,8 +263,8 @@ function Globe() {
       <meshBasicMaterial
         map={earthTexture}
         transparent
-        opacity={0.85}
-        color="#ffffff"
+        color="#b8d0e6" // More light and less saturated color
+        opacity={0.9}
       />
     </Sphere>
   );
@@ -514,16 +514,16 @@ function ModernLightBackground() {
           />
         ))}
 
-      {/* Modern grid with thin lines */}
       {/* Modern grid with thin lines with fading effect */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(43, 8, 92, 0.03) 1px, transparent 1px), 
-                              linear-gradient(to bottom, rgba(43, 8, 92, 0.03) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(43, 8, 92, 0.08) 1px, transparent 1px), 
+                     linear-gradient(to bottom, rgba(43, 8, 92, 0.08) 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
           maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%)",
+          boxShadow: "inset 0 0 30px rgba(43, 8, 92, 0.05)",
         }}
       ></div>
     </div>

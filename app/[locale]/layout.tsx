@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { locales } from "@/i18n";
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   const { locale } = await Promise.resolve(params);
+  if (!locales.includes(locale)) return notFound();
   await setRequestLocale(locale);
 
   // Load the messages for the current locale

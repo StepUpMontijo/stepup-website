@@ -1,26 +1,22 @@
 import createMiddleware from "next-intl/middleware";
-import { locales, defaultLocale } from "./i18n";
+import { defineRouting } from "next-intl/routing";
 
-// Middleware to intercept requests and redirect to the correct locale
-export default createMiddleware({
-  // List of supported locales
-  locales: locales,
+const routing = defineRouting({
+  // A list of all locales that are supported
+  locales: ["en", "pt"],
 
-  // Default locale
-  defaultLocale: defaultLocale,
+  // Used when no locale matches
+  defaultLocale: "pt",
 
   // Always include the locale in the URL, even for the default locale
   localePrefix: "always",
 });
 
-// Configuration of routes that the middleware should intercept
+export default createMiddleware(routing);
+
 export const config = {
-  matcher: [
-    // Intercept only routes that don't have:
-    // - File extensions (like .png, .jpg, .css, etc.)
-    // - API routes
-    // - Next.js internal routes
-    // - Files in the public folder
-    "/((?!api|_next|public|favicon.ico|apple-icon.png|manifest.json|.*\\.[^/]+).*)",
-  ],
+  // Match all pathnames except for
+  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
+  // - … the ones containing a dot (e.g. `favicon.ico`)
+  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };
