@@ -362,11 +362,11 @@
       "q1": "Como posso agendar uma aula experimental?",
       "a1": "Pode agendar uma aula experimental gratuita através do nosso formulário de contacto, por telefone ou visitando-nos presencialmente na nossa escola.",
       "q2": "Qual é a duração das aulas?",
-      "a2": "As nossas aulas regulares têm duração de 60 minutos, mas também oferecemos opções de 90 minutos para níveis mais avançados.",
+      "a2": "As aulas para adultos têm duração de 90 minutos e as aulas para crianças e adolescentes têm duração de 60 minutos.",
       "q3": "Vocês oferecem preparação para exames de certificação?",
       "a3": "Sim, oferecemos cursos específicos para preparação de exames como Cambridge, IELTS, TOEFL e outros certificados internacionais.",
       "q4": "Posso cancelar ou remarcar uma aula?",
-      "a4": "Sim, as aulas podem ser remarcadas com pelo menos 24 horas de antecedência, sujeito à disponibilidade dos professores."
+      "a4": "As aulas são agendadas semanalmente no mesmo dia e hora. Embora não seja possível remarcar sessões individuais, oferecemos aulas de prática adicionais para alunos que necessitem de apoio extra."
     }
   },
   "Courses": {
