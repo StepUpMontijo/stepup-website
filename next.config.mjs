@@ -42,7 +42,7 @@ const nextConfig = {
           },
           {
             key: "X-Frame-Options",
-            value: "SAMEORIGIN",
+            value: "SAMEORIGIN", // Changed from DENY to SAMEORIGIN to allow Zoho Bigin frames
           },
           {
             key: "X-XSS-Protection",
@@ -59,11 +59,21 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; form-action 'self' https://bigin.zoho.eu; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu; object-src 'none'; report-to default; sandbox allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox;",
           },
           {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            key: "Report-To",
+            value: '{"group":"default","max_age":31536000,"endpoints":[{"url":"/api/csp-report"}]}',
+          },
+        ],
+      },
+      {
+        // Exception for the Zoho Bigin script
+        source: "/_next/script/(.*)",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/javascript",
           },
         ],
       },
