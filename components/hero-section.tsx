@@ -24,28 +24,28 @@ const TypewriterEffect = ({
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      // Palavra atual
+      // Current word
       const currentWord = words[currentWordIndex];
 
       if (isDeleting) {
-        // Deletando caracteres
+        // Deleting characters
         setCurrentText((prev) => prev.substring(0, prev.length - 1));
-        setTypingSpeed(30); // Deletar ainda mais rápido
+        setTypingSpeed(30); // Delete even faster
 
-        // Quando terminar de deletar, mude para o próximo palavra
+        // When finished deleting, change to the next word
         if (currentText === "") {
           setIsDeleting(false);
           setCurrentWordIndex((prev) => (prev + 1) % words.length);
           setTypingSpeed(80);
         }
       } else {
-        // Digitando caracteres
+        // Typing characters
         setCurrentText((prev) => currentWord.substring(0, prev.length + 1));
-        setTypingSpeed(60); // Digitar mais rápido
+        setTypingSpeed(60); // Type faster
 
-        // Quando terminar de digitar, aguarde e então comece a deletar
+        // When finished typing, wait and then start deleting
         if (currentText === currentWord) {
-          setTypingSpeed(1000); // Pausa mais curta
+          setTypingSpeed(1000); // Shorter pause
           setTimeout(() => setIsDeleting(true), 1000);
         }
       }
@@ -220,13 +220,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 w-full sm:w-auto mx-auto"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="pointer-events-auto relative group"
+              className="pointer-events-auto relative group w-fit mx-auto sm:mx-0"
             >
               {/* Animated rainbow border as a line circling the button - even thicker */}
               <span className="absolute -inset-[5px] rounded-xl z-0 overflow-hidden">
@@ -251,6 +251,8 @@ export default function HeroSection() {
                       transform: rotate(360deg);
                     }
                   }
+                  
+                  /* Removido o estilo aqui, pois estamos usando classes Tailwind diretamente */
                 `}</style>
               </span>
               <span className="absolute -inset-[3px] bg-white rounded-[12px] z-[1]"></span>
@@ -287,7 +289,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="pointer-events-auto"
+              className="pointer-events-auto w-fit mx-auto sm:mx-0"
             >
               <Link
                 href="/about"
