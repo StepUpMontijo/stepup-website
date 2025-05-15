@@ -162,7 +162,7 @@ export default async function ServicesPage({ params }: PageProps) {
 
               <div className="relative overflow-hidden rounded-3xl">
                 <Image
-                  src="/images/english-book.webp"
+                  src="/images/services/english-book.webp"
                   alt="Services of StepUp"
                   width={600}
                   height={700}
@@ -232,7 +232,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 t("tutoring.features.improve"),
                 t("tutoring.features.develop"),
               ]}
-              image="/images/services1.webp"
+              image="/images/services/services1.webp"
               icon={Book}
             />
           </div>
@@ -246,7 +246,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 t("exams.features.certifications"),
                 t("exams.features.specific"),
               ]}
-              image="/images/services2.webp"
+              image="/images/services/services2.webp"
               icon={Trophy}
             />
           </div>
@@ -260,7 +260,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 t("activities.features.workshops"),
                 t("activities.features.events"),
               ]}
-              image="/images/services3.webp"
+              image="/images/services/services3.webp"
               icon={MessageCircle}
             />
           </div>

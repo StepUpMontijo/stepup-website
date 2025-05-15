@@ -219,23 +219,23 @@ export default function SchoolImages() {
             {/* Room and exterior images - primary images */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ImageCard
-                src="/images/room.webp"
+                src="/images/school-images/room.webp"
                 alt={t("room.alt")}
                 title={t("room.title")}
                 description={t("room.description")}
                 onImageClick={handleImageClick(
-                  "/images/room.webp",
+                  "/images/school-images/room.webp",
                   t("room.alt")
                 )}
                 priority={true}
               />
               <ImageCard
-                src="/images/exterior.webp"
+                src="/images/school-images/exterior.webp"
                 alt={t("exterior.alt")}
                 title={t("exterior.title")}
                 description={t("exterior.description")}
                 onImageClick={handleImageClick(
-                  "/images/exterior.webp",
+                  "/images/school-images/exterior.webp",
                   t("exterior.alt")
                 )}
                 priority={true}
@@ -246,10 +246,10 @@ export default function SchoolImages() {
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 <ImageCard
-                  src="/images/act1.webp"
+                  src="/images/school-images/act1.webp"
                   alt={t("studentActivity.alt")}
                   onImageClick={handleImageClick(
-                    "/images/act1.webp",
+                    "/images/school-images/act1.webp",
                     t("studentActivity.alt")
                   )}
                   className="shadow-none"
@@ -257,10 +257,10 @@ export default function SchoolImages() {
                   priority={false}
                 />
                 <ImageCard
-                  src="/images/act2.webp"
+                  src="/images/school-images/act2.webp"
                   alt={t("studentActivity.alt2")}
                   onImageClick={handleImageClick(
-                    "/images/act2.webp",
+                    "/images/school-images/act2.webp",
                     t("studentActivity.alt2")
                   )}
                   className="shadow-none"

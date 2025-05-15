@@ -167,11 +167,14 @@ function Globe() {
   const hasMovedRef = useRef(false);
 
   // Load textures with useMemo for caching
-  const earthTexture = useTexture("/images/earth-texture.webp", (texture) => {
-    texture.minFilter = THREE.LinearFilter;
-    texture.generateMipmaps = false;
-    texture.anisotropy = 1;
-  });
+  const earthTexture = useTexture(
+    "/images/globe/earth-texture.webp",
+    (texture) => {
+      texture.minFilter = THREE.LinearFilter;
+      texture.generateMipmaps = false;
+      texture.anisotropy = 1;
+    }
+  );
 
   // Entry animation effect
   useEffect(() => {
@@ -264,7 +267,7 @@ function Globe() {
         map={earthTexture}
         transparent
         color="#b8d0e6" // More light and less saturated color
-        opacity={0.9}
+        opacity={0.85}
       />
     </Sphere>
   );
