@@ -42,7 +42,7 @@ const nextConfig = {
           },
           {
             key: "X-Frame-Options",
-            value: "DENY",
+            value: "SAMEORIGIN",
           },
           {
             key: "X-XSS-Protection",
@@ -59,7 +59,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; frame-src 'self' https://bigin.zoho.eu https://www.google.com;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu;",
           },
           {
             key: "Cache-Control",
