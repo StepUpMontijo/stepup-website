@@ -108,10 +108,10 @@ export default async function AboutPage({ params }: PageProps) {
               <div className="relative">
                 <div className="relative overflow-hidden rounded-3xl">
                   <Image
-                    src="https://placehold.co/600x700/webp"
+                    src="https://placehold.co/700x600/webp"
                     alt="StepUp Team"
-                    width={600}
-                    height={700}
+                    width={700}
+                    height={600}
                     className="w-full h-auto object-cover rounded-3xl shadow-xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
