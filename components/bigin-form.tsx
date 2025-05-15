@@ -24,29 +24,24 @@ export default function BiginForm({
   useEffect(() => {
     if (scriptLoaded.current) return;
 
-    // Function to add the Zoho Bigin form
     const loadBiginForm = () => {
-      // Clear previous content if it exists
       if (formContainerRef.current) {
         formContainerRef.current.innerHTML = "";
       }
 
-      // Get the Zoho Bigin configuration keys from the environment variables
       const xnQsjsdp = process.env.NEXT_PUBLIC_ZOHO_BIGIN_XNQSJSDP;
       const xmIwtLD = process.env.NEXT_PUBLIC_ZOHO_BIGIN_XMIWTLD;
       const formId = process.env.NEXT_PUBLIC_ZOHO_BIGIN_FORM_ID;
 
-      // Check if the environment variables are defined
       if (!xnQsjsdp || !xmIwtLD || !formId) {
         console.error(
           "Zoho Bigin configuration is missing. Please check your environment variables."
         );
 
-        // Show error message in the form
         if (formContainerRef.current) {
           formContainerRef.current.innerHTML = `
             <div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600">
-              <h3 class="font-medium mb-2">Configuration Error</h3>
+              <h3 class="font-semibold text-xl mb-2">Configuration Error</h3>
               <p>The form cannot be loaded due to missing configuration. Please contact the administrator.</p>
             </div>
           `;
@@ -54,90 +49,102 @@ export default function BiginForm({
         return;
       }
 
-      // Use HTML provided by Zoho Bigin directly
       if (formContainerRef.current) {
         formContainerRef.current.innerHTML = `
           <iframe id='hidden${formId}Frame' name='hidden${formId}Frame' style='display: none;' class='iframe-container'></iframe>
-          <div class='bigin-form-parent' id='BiginWebToRecordFormParent${formId}'>
-            <div class='bigin-form-wrapper' id='BiginWebToRecordFormDiv${formId}'>
+          <div class='wf-parent' id='BiginWebToRecordFormParent${formId}'>
+            <div class='wf-wrapper' id='BiginWebToRecordFormDiv${formId}'>
               <meta name='viewport' content='width=device-width, initial-scale=1.0'>
               <META HTTP-EQUIV='content-type' CONTENT='text/html;charset=UTF-8'>
-              <form id='BiginWebToRecordForm${formId}' name='BiginWebToRecordForm${formId}' class='bigin-wf-form-component' data-ux-form-alignment='top' method='POST' enctype='multipart/form-data' target='hidden${formId}Frame' onSubmit='javascript:document.charset="UTF-8"; var isValid = validateForm${formId}(); return isValid;' accept-charset='UTF-8'>
-                <!-- Do not remove this code. -->
+              <form id='BiginWebToRecordForm${formId}' name='BiginWebToRecordForm${formId}' class='wf-form-component' data-ux-form-alignment='top' style='font-family: Arial;position: relative;font-size:15px;' method='POST' enctype='multipart/form-data' target='hidden${formId}Frame' onSubmit='javascript:document.charset="UTF-8"; return validateForm${formId}()' accept-charset='UTF-8'>
                 <input type='text' style='display:none;' name='xnQsjsdp' value='${xnQsjsdp}'/>
                 <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
                 <input type='text' style='display:none;' name='xmIwtLD' value='${xmIwtLD}'/>
                 <input type='text' style='display:none;' name='actionType' value='UG90ZW50aWFscw=='/>
                 <input type='hidden' name='rmsg' id='rmsg' value='true'/>
-                <div id='elementDiv${formId}' class='bigin-wf-form-wrapper'>
-                  <div class='bigin-wf-row'>  
-                    <div class='bigin-wf-label'>${
-                      locale === "en" ? "First Name" : "Nome"
-                    }</div>
-                    <div class='bigin-wf-field bigin-wf-field-mandatory'>
-                      <div class='bigin-wf-field-inner'>
-                      <input name='Potential Name' maxlength='120' type='text' value='' class='bigin-wf-field-item bigin-wf-field-input' oninput='removeError(this)'/>
+                <input type='text' style='display:none;' name='returnURL' value='null' />
+                <div id='elementDiv${formId}' class='wf-form-wrapper'>
+                  <div class='wf-row wf-row-flex'>  
+                    <div class='wf-col'>
+                      <div class='wf-label'>${
+                        locale === "en" ? "First Name" : "Nome"
+                      }</div>
+                      <div class='wf-field wf-field-mandatory'>
+                        <div class='wf-field-inner'>
+                          <input name='Potential Name' maxlength='120' type='text' value='' class='wf-field-item wf-field-input' oninput='removeError(this)' placeholder='${
+                            locale === "en" ? "John" : "João"
+                          }'/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='wf-col'>
+                      <div class='wf-label'>${
+                        locale === "en" ? "Last Name" : "Apelido"
+                      }</div>
+                      <div class='wf-field wf-field-mandatory'>
+                        <div class='wf-field-inner'>
+                          <input name='Contacts.Last Name' maxlength='80' type='text' value='' class='wf-field-item wf-field-input' oninput='removeError(this)' placeholder='${
+                            locale === "en" ? "Smith" : "Silva"
+                          }'/>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class='bigin-wf-row'>  
-                    <div class='bigin-wf-label'>${
-                      locale === "en" ? "Last Name" : "Sobrenome"
-                    }</div>
-                    <div class='bigin-wf-field bigin-wf-field-mandatory'>
-                      <div class='bigin-wf-field-inner'>
-                      <input name='Contacts.Last Name' maxlength='80' type='text' value='' class='bigin-wf-field-item bigin-wf-field-input' oninput='removeError(this)'/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='bigin-wf-row'>  
-                    <div class='bigin-wf-label'>${
+                  <div class='wf-row'>  
+                    <div class='wf-label'>${
                       locale === "en" ? "Mobile" : "Telemóvel"
                     }</div>
-                    <div class='bigin-wf-field'>
-                      <div class='bigin-wf-field-inner'>
-                      <input fvalidate='true' ftype='mobile' name='Contacts.Mobile' maxlength='30' type='text' value='' class='bigin-wf-field-item bigin-wf-field-input' oninput='removeError(this)'/>
+                    <div class='wf-field'>
+                      <div class='wf-field-inner'>
+                        <input fvalidate='true' ftype='mobile' name='Contacts.Mobile' maxlength='30' type='text' value='' class='wf-field-item wf-field-input' oninput='removeError(this)' placeholder='${"+351 912 345 678"}'/>
                       </div>
                     </div>
                   </div>
-                  <div class='bigin-wf-row'>  
-                    <div class='bigin-wf-label'>${
+                  <div class='wf-row'>  
+                    <div class='wf-label'>${
                       locale === "en" ? "Email" : "Email"
                     }</div>
-                    <div class='bigin-wf-field'>
-                      <div class='bigin-wf-field-inner'>
-                      <input fvalidate='true' ftype='email' name='Contacts.Email' maxlength='100' type='text' value='' class='bigin-wf-field-item bigin-wf-field-input' oninput='removeError(this)'/>
+                    <div class='wf-field'>
+                      <div class='wf-field-inner'>
+                        <input fvalidate='true' ftype='email' name='Contacts.Email' maxlength='100' type='text' value='' class='wf-field-item wf-field-input' oninput='removeError(this)' placeholder='${"email@example.com"}'/>
                       </div>
                     </div>
                   </div>
-                  <div class='bigin-wf-row' style='display:none;';>  
-                    <div class='bigin-wf-label'>Sub-Pipeline</div>
-                    <div class='bigin-wf-field'>
-                      <div class='bigin-wf-field-inner dropdown-contents'>
-                      <select name='Pipeline' class='bigin-wf-field-item bigin-wf-field-dropdown' data-wform-field='select' onchange='removeError(this);'>
-                        <option selected value='Sales&#x20;Pipeline&#x20;Standard'>Sales Pipeline Standard</option>
-                      </select>
+                  <div class='wf-row' style='display:none;'>  
+                    <div class='wf-label'>Sub-Pipeline</div>
+                    <div class='wf-field'>
+                      <div class='wf-field-inner dropdown-contents'>
+                        <select name='Pipeline' class='wf-field-item wf-field-dropdown' data-wform-field='select' onchange='removeError(this);'>
+                          <option selected value='Sales&#x20;Pipeline&#x20;Standard'>Sales Pipeline Standard</option>
+                        </select>
                       </div>
                     </div>
                   </div>
-                  <div class='bigin-wf-row' style='display:none;';>  
-                    <div class='bigin-wf-label'>Stage</div>
-                    <div class='bigin-wf-field'>
-                      <div class='bigin-wf-field-inner dropdown-contents'>
-                      <select name='Stage' class='bigin-wf-field-item bigin-wf-field-dropdown' data-wform-field='select' onchange='removeError(this);'>
-                        <option selected value='Qualification'>Qualification</option>
-                        <option value='Book&#x20;trial&#x20;class'>Book trial class</option>
-                      </select>
+                  <div class='wf-row' style='display:none;'>  
+                    <div class='wf-label'>Stage</div>
+                    <div class='wf-field'>
+                      <div class='wf-field-inner dropdown-contents'>
+                        <select name='Stage' class='wf-field-item wf-field-dropdown' data-wform-field='select' onchange='removeError(this);'>
+                          <option selected value='Qualification'>Qualification</option>
+                          <option value='Book&#x20;trial&#x20;class'>Book trial class</option>
+                        </select>
                       </div>
                     </div>
                   </div>
-                  <div class='bigin-wform-btn-wrap' data-ux-pos='left'>
-                    <input id='formsubmit' type='submit' class='bigin-wf-btn' data-ux-btn-type='default' value='${
+                  <div class='wform-btn-wrap' data-ux-pos='left'>
+                    <input id='formsubmit' type='submit' class='wf-btn' data-ux-btn-type='default' value='${
                       locale === "en" ? "Submit" : "Enviar"
                     }'/>
                   </div>
+                  <div class='wf-consent-notice'>
+                    ${
+                      locale === "en"
+                        ? "By submitting this form, you agree to be contacted by our team."
+                        : "Ao submeter este formulário, aceita ser contactado pela nossa equipa."
+                    }
+                  </div>
                 </div>
-                <a class='bigin-wform-poweredby-container' target='_blank' href='https://zoho.eu/bigin/?utm_source=biginwebforms&utm_medium=organic&utm_id=product' id='poweredBy${formId}'>
+                <a class='wform-poweredby-container' target='_blank' href='https://zoho.eu/bigin/?utm_source=biginwebforms&utm_medium=organic&utm_id=product' id='poweredBy${formId}'>
                   <span style='padding-right: 5px;color: #C5D4E5;'>Powered by</span>
                   <img src='https://bigin.zoho.eu/images/bigin-logo-xs.svg' style='margin-right: 5px;'/>
                   <span>Bigin</span>
@@ -157,36 +164,36 @@ export default function BiginForm({
             document.forms['BiginWebToRecordForm${formId}'].setAttribute('data-ux-form-alignment', 'top');
           }
           function removeError(fieldObj) {
-            var parentElement = fieldObj.closest('.bigin-wf-field'),
-              childEle = parentElement.getElementsByClassName('bigin-wf-error-parent-ele')[0];
+            var parentElement = fieldObj.closest('.wf-field'),
+              childEle = parentElement.getElementsByClassName('wf-error-parent-ele')[0];
             if(childEle) {
-              parentElement.classList.remove('bigin-wf-field-error-active');
-              parentElement.removeChild(parentElement.getElementsByClassName('bigin-wf-error-parent-ele')[0]);
+              parentElement.classList.remove('wf-field-error-active');
+              parentElement.removeChild(parentElement.getElementsByClassName('wf-error-parent-ele')[0]);
             }
           }
           function setError(fieldObj, label) {
-            var parentElement = fieldObj.closest('.bigin-wf-field'),
-              childEle = parentElement.getElementsByClassName('bigin-wf-error-parent-ele')[0];
+            var parentElement = fieldObj.closest('.wf-field'),
+              childEle = parentElement.getElementsByClassName('wf-error-parent-ele')[0];
             if(!childEle) {
               var errorParentEle = document.createElement('DIV'),
               spanEle = document.createElement('SPAN'),
               viewMoreEle = document.createElement('SPAN');
-              spanEle.setAttribute('class', 'bigin-wf-field-error bigin-wf-field-error-long');
+              spanEle.setAttribute('class', 'wf-field-error wf-field-error-long');
               spanEle.innerHTML = label;
-              errorParentEle.classList.add('bigin-wf-error-parent-ele');
+              errorParentEle.classList.add('wf-error-parent-ele');
               errorParentEle.appendChild(spanEle);
               parentElement.append(errorParentEle);
-              parentElement.classList.add('bigin-wf-field-error-active');
+              parentElement.classList.add('wf-field-error-active');
               if(spanEle.scrollWidth > parentElement.offsetWidth) {
                 viewMoreEle.innerHTML = 'View More';
-                viewMoreEle.classList.add('bigin-wf-error-view-more');
+                viewMoreEle.classList.add('wf-error-view-more');
                 errorParentEle.append(viewMoreEle);
                 viewMoreEle.addEventListener('click', function() {
-                errorParentEle.removeChild(viewMoreEle);
-                spanEle.classList.remove('bigin-wf-field-error-long');
+                  errorParentEle.removeChild(viewMoreEle);
+                  spanEle.classList.remove('wf-field-error-long');
                 });
               } else {
-                spanEle.classList.remove('bigin-wf-field-error-long')
+                spanEle.classList.remove('wf-field-error-long')
               }
             }
           }
@@ -195,66 +202,65 @@ export default function BiginForm({
             var form = document.forms['BiginWebToRecordForm${formId}'];
             var validateFld = form.querySelectorAll('[fvalidate=true]');
             var i;
-            for (i = 0; i < validateFld.length; i++)
-            {
+            for (i = 0; i < validateFld.length; i++) {
               var validateFldVal = validateFld[i].value;
               if(validateFldVal !== '') {
-                var fLabel = validateFld[i].parentElement.parentElement.parentElement.getElementsByClassName('bigin-wf-label')[0].innerHTML;
+                var fLabel = validateFld[i].parentElement.parentElement.parentElement.getElementsByClassName('wf-label')[0].innerHTML;
                 switch(validateFld[i].getAttribute('ftype')) {
-                case 'string_rest_number':
-                case 'string':
-                  var isError = false,
-                  errorKey = 'Only letters are allowed.';
-                  if(validateFld[i].getAttribute('ftype') === 'string_rest_number' && validateFldVal.match((/\d/g)) !== null) {	
-                    isError = true;
-                  }else if(validateFld[i].hasAttribute('fmin')){
-                    if(validateFldVal.length < parseInt(validateFld[i].getAttribute('fmin'))) {
-                      errorKey = 'Your input must be at least ' +validateFld[i].getAttribute('fmin') + ' character(s).';
+                  case 'string_rest_number':
+                  case 'string':
+                    var isError = false,
+                    errorKey = 'Only letters are allowed.';
+                    if(validateFld[i].getAttribute('ftype') === 'string_rest_number' && validateFldVal.match((/\d/g)) !== null) {	
                       isError = true;
-                    } else if(validateFldVal.length > parseInt(validateFld[i].getAttribute('fmax'))) {
-                      errorKey = 'Your input should not exceed ' +validateFld[i].getAttribute('fmax') + ' character(s).';
-                      isError = true;
+                    }else if(validateFld[i].hasAttribute('fmin')){
+                      if(validateFldVal.length < parseInt(validateFld[i].getAttribute('fmin'))) {
+                        errorKey = 'Your input must be at least ' +validateFld[i].getAttribute('fmin') + ' character(s).';
+                        isError = true;
+                      } else if(validateFldVal.length > parseInt(validateFld[i].getAttribute('fmax'))) {
+                        errorKey = 'Your input should not exceed ' +validateFld[i].getAttribute('fmax') + ' character(s).';
+                        isError = true;
+                      }
                     }
-                  }
-                  if(isError){
-                    setError(validateFld[i], errorKey);
-                    isReturn = false;
-                  }
-                  break;
-                case 'email':
-                  if(validateFldVal.match(/^([A-Za-z0-9-._%'+/]+@[A-Za-z0-9.-]+.[a-zA-Z]{2,22})$/) === null) {
-                    setError(validateFld[i], 'Enter valid ' + fLabel);
-                    isReturn = false;
-                  }
-                  break;
-                case 'number':
-                case 'double':
-                  var isError = false,
-                  errorKey = 'Enter valid ' + fLabel;
-                  if((validateFld[i].getAttribute('ftype') === 'number' && validateFldVal.match(/^[0-9]+$/) === null)
-                      || (validateFld[i].getAttribute('ftype') === 'double' && validateFldVal.match(/^[0-9]*(\.[0-9]{0,2})?$/) === null)) {
-                    isError = true;
-                  }else if(validateFld[i].hasAttribute('fmin')){
-                    if(validateFldVal < parseInt(validateFld[i].getAttribute('fmin'))) {
-                      errorKey = 'Enter a number greater than or equal to ' +validateFld[i].getAttribute('fmin');
-                      isError = true;
-                    } else if(validateFldVal > parseInt(validateFld[i].getAttribute('fmax'))) {
-                      errorKey = 'Enter a number less than or equal to ' +validateFld[i].getAttribute('fmax');
-                      isError = true;
+                    if(isError){
+                      setError(validateFld[i], errorKey);
+                      isReturn = false;
                     }
-                  }
-                  if(isError){
-                    setError(validateFld[i], errorKey);
-                    isReturn = false;
-                  }
-                  break;
-                case 'mobile':
-                   if(validateFldVal.match(/^[0-9a-zA-Z+.()\-;\s]+$/) === null) {
-                    setError(validateFld[i], 'Enter valid ' + fLabel);
-                    isReturn = false;
-                   }
-                  break;
-                 }
+                    break;
+                  case 'email':
+                    if(validateFldVal.match(/^([A-Za-z0-9-._%'+/]+@[A-Za-z0-9.-]+.[a-zA-Z]{2,22})$/) === null) {
+                      setError(validateFld[i], 'Enter valid ' + fLabel);
+                      isReturn = false;
+                    }
+                    break;
+                  case 'number':
+                  case 'double':
+                    var isError = false,
+                    errorKey = 'Enter valid ' + fLabel;
+                    if((validateFld[i].getAttribute('ftype') === 'number' && validateFldVal.match(/^[0-9]+$/) === null)
+                        || (validateFld[i].getAttribute('ftype') === 'double' && validateFldVal.match(/^[0-9]*(\.[0-9]{0,2})?$/) === null)) {
+                      isError = true;
+                    }else if(validateFld[i].hasAttribute('fmin')){
+                      if(validateFldVal < parseInt(validateFld[i].getAttribute('fmin'))) {
+                        errorKey = 'Enter a number greater than or equal to ' +validateFld[i].getAttribute('fmin');
+                        isError = true;
+                      } else if(validateFldVal > parseInt(validateFld[i].getAttribute('fmax'))) {
+                        errorKey = 'Enter a number less than or equal to ' +validateFld[i].getAttribute('fmax');
+                        isError = true;
+                      }
+                    }
+                    if(isError){
+                      setError(validateFld[i], errorKey);
+                      isReturn = false;
+                    }
+                    break;
+                  case 'mobile':
+                    if(validateFldVal.match(/^[0-9a-zA-Z+.()\-;\s]+$/) === null) {
+                      setError(validateFld[i], 'Enter valid ' + fLabel);
+                      isReturn = false;
+                    }
+                    break;
+                }
               }
             }
             return isReturn;
@@ -273,29 +279,29 @@ export default function BiginForm({
                   }
                   else {
                     setError(fieldObj, fldLangVal[i] + ' cannot be empty');
-                  isReturn= false;
+                    isReturn= false;
                   }
                 }  else if(fieldObj.nodeName=='SELECT') {
                   if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
-                  setError(fieldObj, fldLangVal[i] +' cannot be none.');
-                  isReturn = false;
-                 }
+                    setError(fieldObj, fldLangVal[i] +' cannot be none.');
+                    isReturn = false;
+                  }
                 } else if(fieldObj.type =='checkbox'){
-                 if(fieldObj.checked == false){
-                  setError(fieldObj, 'Please accept  '+fldLangVal[i]);
-                  isReturn= false;
+                  if(fieldObj.checked == false){
+                    setError(fieldObj, 'Please accept  '+fldLangVal[i]);
+                    isReturn= false;
                   } 
-               }
+                }
               }
             }
-             isNotCaptcha = true;
+            isNotCaptcha = true;
             if(!validateFields${formId}()){isReturn = false;}
             if(!isReturn){
-              var errEle = document.getElementsByClassName('bigin-wf-field-error');
+              var errEle = document.getElementsByClassName('wf-field-error');
               if(errEle && errEle.length >0){
-                var inputEle = errEle[0].closest('.bigin-wf-field').getElementsByTagName('input');
+                var inputEle = errEle[0].closest('.wf-field').getElementsByTagName('input');
                 if(inputEle && inputEle.length == 0) {
-                  inputEle = errEle[0].closest('.bigin-wf-field').getElementsByTagName('select');
+                  inputEle = errEle[0].closest('.wf-field').getElementsByTagName('select');
                 }
                 if(inputEle && inputEle.length > 0) {
                   inputEle[0].focus();
@@ -409,67 +415,101 @@ export default function BiginForm({
         const style = document.createElement("style");
         style.type = "text/css";
         style.innerHTML = `
-          /* BIGIN FORM STYLES - Encapsulated with bigin- prefix */
-          .bigin-form-container {
-            font-family: Arial, sans-serif;
+          /* COMMON STYLES */
+          .wf-form-component {
+            padding: 2rem 2.5rem 3.5rem;
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+          }
+
+          .wf-form-paid {
+            padding-bottom: 3rem;
+          }
+
+          .wf-parent {
+            padding: 1.5rem 0;
+            height: 100%;
+            box-sizing: border-box;
+            overflow: auto;
+            background: transparent;
+          }
+
+          .wf-wrapper * {
+            box-sizing: border-box;
+          }
+
+          .wf-wrapper {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 1rem;
+            margin: auto;
+            border: none;
+            background-color: #fff;
+            color: #1a1a1a;
+            transition: all 0.25s ease;
+          }
+
+          .wf-wrapper:hover {
+            transform: translateY(-2px);
           }
           
-          .bigin-form-container .iframe-container {
+          /* Flexbox layout for name fields */
+          .wf-row-flex {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+          }
+          
+          .wf-col {
+            flex: 1;
+            min-width: 0;
+          }
+
+          .iframe-container {
             height: 100%;
             width: 100%;
             border: none;
             min-height: 365px;
           }
-          
-          .bigin-form-parent {
-            background-color: transparent;
+
+          .wf-header {
+            font-size: 1.75rem;
+            padding-bottom: 2rem;
+            font-weight: 600;
+            word-break: break-word;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            text-align: center;
           }
-          
-          .bigin-form-wrapper {
-            width: 100%;
-            margin: auto;
-            color: #222;
+
+          .wf-row {
+            margin-bottom: 1.5rem;
           }
-          
-          .bigin-wf-form-component {
-            padding: 0;
-            font-family: inherit;
-            font-size: 15px;
-          }
-          
-          .bigin-wf-form-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-          }
-          
-          .bigin-wf-row {
-            margin-bottom: 0;
-          }
-          
-          .bigin-wf-label {
-            padding: 0 0 8px;
+
+          .wf-label {
+            padding: 0.25rem 0;
             word-break: break-word;
             font-weight: 500;
             color: #4a5568;
-            font-size: 14px;
-            letter-spacing: 0.02em;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
           }
-          
-          .bigin-wf-field {
+
+          .wf-field:not(.multiple-fields-div) {
             text-align: left;
             word-break: break-word;
             border: 0;
             position: relative;
           }
-          
-          .bigin-wf-field-inner {
+
+          .wf-field-inner {
             position: relative;
             display: flex;
             flex: 1;
           }
-          
-          .bigin-wf-field-mandatory .bigin-wf-field-inner::before {
+
+          .wf-field-mandatory .wf-field-inner::before {
             content: '';
             position: absolute;
             left: 0px;
@@ -481,42 +521,65 @@ export default function BiginForm({
             z-index: 2;
             top: 0;
             bottom: 0;
+            transition: all 0.2s ease;
           }
-          
-          .bigin-wf-field-input, .bigin-wf-field-dropdown {
+
+          .wf-field-input,
+          .wf-field-dropdown {
             width: 100%;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 12px 16px;
-            min-height: 46px;
-            font-size: 15px;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            min-height: 3rem;
+            font-size: 0.95rem;
             font-family: inherit;
-            transition: all 0.2s ease;
             background-color: #fff;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
           }
-          
-          .bigin-wf-field-input:focus, .bigin-wf-field-dropdown:focus {
+
+          .wf-field-input::placeholder {
+            color: #a0aec0;
+          }
+
+          .wf-field-input:hover,
+          .wf-field-dropdown:hover {
+            border-color: #cbd5e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+          }
+
+          .wf-field-input:focus,
+          .wf-field-dropdown:focus {
             border-color: #4299e1;
             box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
             outline: none;
           }
-          
-          .bigin-wf-field-input:hover, .bigin-wf-field-dropdown:hover {
-            border-color: #cbd5e0;
+
+          .wf-field-error {
+            color: #e53e3e;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
           }
-          
-          .bigin-wform-btn-wrap {
-            display: flex;
-            margin-top: 10px;
-            align-items: center;
-            justify-content: flex-start;
+
+          .wf-field-error-active .wf-field-error {
+            display: block;
           }
-          
-          .bigin-wf-btn {
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-size: 15px;
+
+          .wf-field-error-active .wf-field-input,
+          .wf-field-error-active .wf-field-dropdown {
+            border: 1px solid #e53e3e;
+            box-shadow: 0 0 0 1px rgba(229, 62, 62, 0.3);
+          }
+
+          .wf-btn {
+            padding: 0.85rem 2rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
             cursor: pointer;
             font-weight: 600;
             font-family: inherit;
@@ -524,80 +587,132 @@ export default function BiginForm({
             color: #fff;
             border: none;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
+            letter-spacing: 0.01em;
             width: 100%;
-            letter-spacing: 0.02em;
           }
-          
-          .bigin-wf-btn:hover {
+
+          .wf-btn:hover {
             background-color: #3182ce;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(66, 153, 225, 0.25);
           }
-          
-          .bigin-wf-btn:active {
+
+          .wf-btn:active {
             transform: translateY(0);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+          }
+
+          .wform-btn-wrap {
+            display: flex;
+            margin-top: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
           }
           
-          .bigin-wform-poweredby-container {
+          .wf-consent-notice {
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0 0.5rem;
+            line-height: 1.4;
+          }
+
+          .wform-poweredby-container {
             position: absolute;
             left: 0;
-            bottom: -40px;
-            border-top-right-radius: 6px;
-            border-bottom-left-radius: 6px;
+            bottom: 0;
+            border-top-right-radius: 0.75rem;
+            border-bottom-left-radius: 0.75rem;
             background-color: #2d3748;
-            font-size: 11px;
-            padding: 5px 7px;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.6rem;
             font-family: sans-serif;
             display: flex;
             align-items: center;
             color: #fff;
             text-decoration: none;
-            opacity: 0.8;
+            opacity: 0.7;
             transition: opacity 0.2s ease;
           }
-          
-          .bigin-wform-poweredby-container:hover {
+
+          .wform-poweredby-container:hover {
             opacity: 1;
           }
-          
-          /* ERROR STYLES */
-          .bigin-wf-field-error {
-            color: #e53e3e;
-            font-size: 12px;
-            margin-top: 6px;
-            display: none;
+
+          @keyframes shake {
+            10%,90% {transform: translate3d(-1px, 0, 0);}
+            20%,80% {transform: translate3d(2px, 0, 0);}
+            30%,50%,70% {transform: translate3d(-4px, 0, 0);}
+            40%,60% {transform: translate3d(4px, 0, 0);}
           }
-          
-          .bigin-wf-field-error-active.bigin-wf-field .bigin-wf-field-error {
-            display: block;
-          }
-          
-          .bigin-wf-field-error-active.bigin-wf-field .bigin-wf-error-view-more {
-            display: flex;
-          }
-          
-          .bigin-wf-field-error-active.bigin-wf-field .bigin-wf-field-input,
-          .bigin-wf-field-error-active.bigin-wf-field .bigin-wf-field-dropdown {
-            border: 1px solid #e53e3e;
-            box-shadow: 0 0 0 1px rgba(229, 62, 62, 0.3);
-          }
-          
-          /* RESPONSIVE */
-          @media screen and (max-width: 768px) {
-            .bigin-wf-field-input, .bigin-wf-field-dropdown {
+
+          @media screen and (max-width: 1024px) {
+            .wf-wrapper {
+              max-width: 700px;
+              width: calc(100% - 40px);
+              border: 0;
+            }
+            .wf-field input[type=text],
+            .wf-field select,
+            .wf-field textarea {
               width: 100% !important;
             }
-            
-            .bigin-wf-label:empty {
+            .wf-label:empty {
               display: none;
             }
           }
-          
+
+          @media screen and (max-width: 768px) {
+            .wf-wrapper {
+              max-width: 700px;
+              width: calc(100% - 40px);
+              border: 0;
+            }
+            .wf-field input[type=text],
+            .wf-field select,
+            .wf-field textarea {
+              width: 100% !important;
+            }
+            .wf-label:empty {
+              display: none;
+            }
+            .wf-form-component[data-ux-form-alignment='top'] .wform-btn-wrap {
+              justify-content: center;
+            }
+            .wf-row-flex {
+              flex-direction: column;
+              gap: 0;
+            }
+            .wf-col {
+              margin-bottom: 1.75rem;
+            }
+            .wf-col:last-child {
+              margin-bottom: 0;
+            }
+          }
+
           @media screen and (max-width: 590px) {
-            .bigin-wf-form-component {
-              padding: 0;
+            .wf-parent {
+              padding: 1rem 0;
+            }
+            .wf-wrapper {
+              width: calc(100% - 30px) !Important;
+              border: 0;
+            }
+            .wf-form-component {
+              padding: 1.5rem;
+              padding-bottom: 3.5rem;
+            }
+            .wf-field input[type=text],
+            .wf-field select,
+            .wf-field textarea {
+              width: 100% !important;
+            }
+            .wf-label:empty {
+              display: none;
             }
           }
         `;
@@ -610,13 +725,11 @@ export default function BiginForm({
 
     loadBiginForm();
 
-    // Cleanup when unmounting
     return () => {
       scriptLoaded.current = false;
     };
   }, [locale, title, subtitle]);
 
-  // Message handler for toast notifications
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.data && event.data.type === "showToast") {
@@ -636,10 +749,9 @@ export default function BiginForm({
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
-  // Determine the style classes based on the transparent prop
   const containerClasses = transparent
     ? `${className}`
-    : `${className} bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10 overflow-hidden`;
+    : `${className} bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 overflow-hidden transition-all hover:shadow-xl`;
 
   return (
     <div className={containerClasses}>
