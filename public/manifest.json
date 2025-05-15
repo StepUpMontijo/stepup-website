@@ -1,0 +1,55 @@
+{
+  "name": "StepUp Idiomas | Escola de Inglês em Montijo",
+  "short_name": "StepUp",
+  "description": "Escola de inglês no Montijo que oferece cursos personalizados para crianças, adolescentes e adultos com metodologia inovadora.",
+  "start_url": "/pt",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bea",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "pt-PT",
+  "dir": "ltr",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "categories": ["education", "learning"],
+  "shortcuts": [
+    {
+      "name": "Início",
+      "short_name": "Início",
+      "description": "Página inicial da StepUp Idiomas",
+      "url": "/pt",
+      "icons": [
+        {
+          "src": "/icons/shortcut-home.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Entre em contacto connosco",
+      "url": "/pt/contact",
+      "icons": [
+        {
+          "src": "/icons/shortcut-contact.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 

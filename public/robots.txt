@@ -1,0 +1,11 @@
+# StepUp Idiomas - Robots.txt
+# https://stepupidiomas.pt
+
+User-agent: *
+Allow: /
+
+# Setting crawling limits to avoid server overload
+Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://stepupidiomas.pt/sitemap.xml 

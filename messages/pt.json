@@ -1,0 +1,390 @@
+{
+  "NavBar": {
+    "home": "Início",
+    "about": "Sobre Nós",
+    "courses": "Cursos",
+    "services": "Serviços",
+    "contact": "Contacto"
+  },
+  "CourseTypes": {
+    "children": "Crianças",
+    "teenagers": "Adolescentes",
+    "adults": "Adultos"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Venha aprender inglês na StepUp!",
+      "subtitle": "Descubra a metodologia que já transformou a vida de centenas de alunos em Portugal",
+      "cta": "Agende uma aula experimental"
+    },
+    "form": {
+      "name": "Nome",
+      "phone": "Telefone",
+      "contactMe": "Entre em contacto comigo",
+      "submit": "Enviar"
+    },
+    "about": {
+      "title": "Sobre a StepUp",
+      "description": "Escola de inglês no Montijo que combina inovação e experiência, com cursos adaptados para todas as idades e níveis.",
+      "cta": "Saiba Mais"
+    },
+    "gallery": {
+      "title": "As Nossas Instalações",
+      "subtitle": "Conheça o ambiente acolhedor e moderno onde os nossos alunos aprendem e evoluem.",
+      "room": {
+        "title": "Sala",
+        "description": "Um espaço confortável onde os alunos podem estudar, interagir e aproveitar o ambiente acolhedor da nossa escola.",
+        "alt": "Sala de aula da StepUp"
+      },
+      "exterior": {
+        "title": "Fachada da Escola",
+        "description": "A nossa escola está localizada numa zona central e de fácil acesso no Montijo.",
+        "alt": "Fachada exterior da escola StepUp"
+      },
+      "studentActivity": {
+        "title": "Atividades Práticas",
+        "description": "Os nossos alunos participam em atividades dinâmicas e interativas que tornam a aprendizagem do inglês mais eficaz, divertida e envolvente.",
+        "alt": "Aluno a participar numa atividade prática",
+        "alt2": "Alunos a trabalhar em grupo numa atividade interativa"
+      },
+      "learnMore": "Saiba mais",
+      "viewFullSize": "Ver em tamanho completo",
+      "clickToEnlarge": "Clique para ampliar"
+    },
+    "features": {
+      "title": "Por que escolher a StepUp?",
+      "subtitle": "A StepUp é uma escola de inglês que combina inovação com experiência. Aqui, o seu sucesso é a nossa maior conquista.",
+      "cards": {
+        "welcoming": {
+          "title": "Ambiente Acolhedor",
+          "description": "Criamos um ambiente marcado pelo apoio, paciência e encorajamento constante. Valorizamos cada progresso, porque sabemos que cada passo conta."
+        },
+        "learning": {
+          "title": "Aprendizagem Para Todos",
+          "description": "A nossa missão é proporcionar a adultos e crianças a oportunidade de adquirir o inglês. Acreditamos que todos podem aprender, mesmo aqueles que pensaram que não seriam capazes."
+        },
+        "experience": {
+          "title": "Experiência Personalizada",
+          "description": "Adaptamos os nossos cursos para diferentes idades e níveis. A nossa equipa de professores experientes oferece atenção personalizada a cada aluno."
+        },
+        "location": {
+          "title": "Localização Privilegiada",
+          "description": "Estamos localizados no Montijo, com salas de aula modernas e confortáveis, projetadas para proporcionar o melhor ambiente."
+        },
+        "services": {
+          "title": "Serviços Complementares",
+          "description": "Além dos cursos regulares de inglês, oferecemos serviços complementares que enriquecem a experiência de aprendizagem e aceleram o seu progresso."
+        }
+      }
+    },
+    "courses": {
+      "title": "Cursos",
+      "children": {
+        "title": "Inglês para Crianças",
+        "description": "O nosso programa infantil é cuidadosamente desenvolvido para introduzir o inglês de forma lúdica e interativa, respeitando o ritmo de cada criança.",
+        "cta": "Saiba Mais"
+      },
+      "teenagers": {
+        "title": "Inglês para Adolescentes",
+        "description": "Os cursos para adolescentes são projetados para desenvolver as competências linguísticas de maneira progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
+        "cta": "Saiba Mais"
+      },
+      "adults": {
+        "title": "Inglês para Adultos",
+        "description": "Cursos direcionados tanto para iniciantes quanto para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
+        "cta": "Saiba Mais"
+      }
+    },
+    "activities": {
+      "title": "Atividades",
+      "description": "Além dos cursos regulares de inglês, a StepUp também oferece serviços complementares que enriquecem a experiência de aprendizagem.",
+      "cta": "Saiba Mais"
+    },
+    "testimonials": {
+      "title": "Os Nossos Alunos Aprovam!",
+      "subtitle": "Veja o que os nossos alunos e pais têm a dizer sobre a StepUp.",
+      "dragToScroll": "Arraste para ver mais",
+      "hoverToPause": "Passe o rato para pausar",
+      "testimonial1": {
+        "text": "A StepUp não apenas ensinou inglês ao meu filho, mas fê-lo amar a aprendizagem. O desenvolvimento dele tem sido incrível.",
+        "name": "Marcia",
+        "role": "Mãe de aluno"
+      },
+      "testimonial2": {
+        "text": "Eu adoro as aulas na StepUp! São divertidas e muito envolventes, sempre com algo novo para aprender.",
+        "name": "Marcia",
+        "role": "Aluna"
+      },
+      "testimonial3": {
+        "text": "A escola tem uma estrutura ótima, professores bastante pacientes e cuidadosos, ajudam imenso os alunos e são super simpáticos! Tem uma organização de matérias incrível, e ajudam bastante! Sinto-me super confortável a aprender inglês.",
+        "name": "Anónimo",
+        "role": "Aluno"
+      },
+      "testimonial4": {
+        "text": "Lugar bastante confortável, aulas muito boas. Professora extremamente gentil, trata todos os alunos bem e explica muito bem. A comunicação com a escola é ótima, tratam-nos sempre com muita educação. Estou há alguns meses e já sinto a diferença no inglês. Extremamente bom.",
+        "name": "Kelssy",
+        "role": "Aluna"
+      },
+      "testimonial5": {
+        "text": "Aprendi bastante inglês nesta escola, os professores são super simpáticos e atenciosos, ajudou-me bastante na minha vida profissional.",
+        "name": "Gabriel Ferreira",
+        "role": "Aluno"
+      },
+      "testimonial6": {
+        "text": "Muito boa escola 😍 o meu filho adora",
+        "name": "Débora Santos",
+        "role": "Mãe de aluno"
+      },
+      "testimonial7": {
+        "text": "Tenho aprendido muito, e principalmente atividades diversas para treinar a nossa fala e os nossos medos. Sentimo-nos encorajados a falar e viver este ambiente. Obrigada equipa.",
+        "name": "Isousa Sousa",
+        "role": "Aluna"
+      },
+      "testimonial8": {
+        "text": "Escola bem estruturada, focada na aprendizagem do aluno.",
+        "name": "Lorena Brandão",
+        "role": "Aluna"
+      },
+      "testimonial9": {
+        "text": "As aulas são bem planeadas e divertidas.",
+        "name": "Márcia Silva",
+        "role": "Aluna"
+      },
+      "testimonial10": {
+        "text": "A escola tem professores atenciosos e dedicados, tem um ambiente acolhedor além de estar numa excelente localização. Aprendi muito desde que iniciei os meus estudos aqui.",
+        "name": "Maria Zazirskas",
+        "role": "Aluna"
+      }
+    },
+    "contact": {
+      "title": "Para mais Informações",
+      "address": "Praça da República, 52, Montijo - Portugal",
+      "email": "admin@stepupidiomas.pt",
+      "phone": "+351 923 076 858"
+    },
+    "stats": {
+      "students": "Alunos Satisfeitos",
+      "teachers": "Professores Qualificados",
+      "experience": "Anos de Experiência"
+    },
+    "accessibility": {
+      "globe": {
+        "skip": "Este é um globo animado decorativo. Pressione Tab para ignorar este elemento.",
+        "ariaLabel": "Plano de fundo decorativo com globo 3D",
+        "description": "Elemento decorativo interativo representando um globo terrestre"
+      }
+    }
+  },
+  "Footer": {
+    "copyright": "Copyright ©[year] StepUp",
+    "schedule": {
+      "title": "Horário",
+      "monday": "Segunda-feira",
+      "tuesday": "Terça-feira",
+      "wednesday": "Quarta-feira",
+      "thursday": "Quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "Sábado",
+      "sunday": "Domingo",
+      "closed": "Encerrado"
+    }
+  },
+  "Theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "Language": {
+    "pt": "Português",
+    "en": "Inglês"
+  },
+  "About": {
+    "title": "Sobre Nós",
+    "subtitle": "Descubra quem somos, a nossa metodologia e por que somos a escolha certa para a sua aprendizagem de inglês.",
+    "stats": {
+      "experience": "Anos de experiência",
+      "students": "Alunos satisfeitos",
+      "approval": "Taxa de aprovação",
+      "teachers": "Professores qualificados"
+    },
+    "history": {
+      "title": "A Nossa História",
+      "quote": "Acreditamos que aprender inglês deve ser uma jornada prazerosa e transformadora.",
+      "text1": "A StepUp nasceu em 2024 a partir da visão de professores de inglês apaixonados pelo ensino e frustrados com os métodos tradicionais que não envolviam verdadeiramente os alunos.",
+      "text2": "A nossa jornada começou no Montijo com o sonho de transformar a aprendizagem de idiomas numa experiência mais envolvente, personalizada e eficaz. Mantemos a nossa essência desde o primeiro dia: ensinar inglês de forma prática e ligada ao mundo real.",
+      "text3": "Hoje, a StepUp orgulha-se de ter ajudado dezenas de alunos a conquistar fluência e confiança no idioma inglês, abrindo portas para oportunidades pessoais e profissionais."
+    },
+    "methodology": {
+      "title": "A Nossa Metodologia",
+      "subtitle": "Na StepUp, acreditamos que a aprendizagem eficaz de idiomas combina teoria e prática num ambiente acolhedor e estimulante.",
+      "cards": {
+        "communicative": {
+          "title": "Comunicativo",
+          "description": "Priorizamos a conversação desde o início, criando um ambiente imersivo onde os alunos são incentivados a expressar-se em inglês desde a primeira aula."
+        },
+        "personalized": {
+          "title": "Personalizado",
+          "description": "Adaptamos o conteúdo e o ritmo das aulas às necessidades e objetivos específicos de cada aluno, garantindo uma aprendizagem eficiente e direcionada."
+        },
+        "dynamic": {
+          "title": "Dinâmico",
+          "description": "Utilizamos uma variedade de recursos e atividades interativas para tornar as aulas dinâmicas e envolventes, facilitando a absorção do conhecimento."
+        }
+      }
+    },
+    "teachers": {
+      "title": "Professores Qualificados",
+      "subtitle": "A nossa equipa é formada por profissionais apaixonados pelo ensino e com ampla experiência na área.",
+      "team": {
+        "pf1": {
+          "name": "Professor 1",
+          "role": "Coordenador Pedagógico",
+          "description": "Professor certificado com mais de 10 anos de experiência em ensino de inglês para todas as idades."
+        },
+        "pf2": {
+          "name": "Professor 2",
+          "role": "Professora Sénior",
+          "description": "Especialista em preparação para exames internacionais com formação em Inglaterra."
+        },
+        "pf3": {
+          "name": "Professor 3",
+          "role": "Professor Nativo",
+          "description": "Professor nativo dos EUA com experiência em ensino de Business English e conversação."
+        },
+        "pf4": {
+          "name": "Professor 4",
+          "role": "Especialista Infantil",
+          "description": "Especialista em ensino para crianças, com metodologias lúdicas e interativas."
+        }
+      }
+    },
+    "location": {
+      "title": "Onde Estamos",
+      "subtitle": "Visite a nossa escola no coração do Montijo e descubra o ambiente perfeito para aprender inglês.",
+      "address": {
+        "title": "Endereço",
+        "street": "Praça da República, 52",
+        "city": "Montijo, 2870-235",
+        "country": "Portugal"
+      },
+      "hours": {
+        "title": "Horário de Funcionamento",
+        "monday": "Segunda: 18:30-21:30",
+        "tuesday": "Terça: 08:30-10:00 e 18:30-21:30",
+        "wednesday": "Quarta: 08:30-10:00 e 18:00-20:00",
+        "closed": "Quinta a Domingo: Encerrado"
+      },
+      "contact": {
+        "title": "Contacto",
+        "phone": "Telefone: +351 923 076 858",
+        "email": "Email: admin@stepupidiomas.pt"
+      }
+    },
+    "cta": {
+      "title": "Pronto para começar a sua jornada?",
+      "subtitle": "Agende uma aula experimental gratuita e descubra por que a StepUp é a escolha certa para a sua aprendizagem de inglês.",
+      "call": "Ligar agora",
+      "button": "Agendar Aula Grátis",
+      "knowMore": "Saber Mais"
+    }
+  },
+  "Services": {
+    "title": "Os Nossos Serviços",
+    "subtitle": "A ligar-lhe às melhores oportunidades de aprendizagem",
+    "description": "Na nossa escola, oferecemos serviços que vão além do ensino tradicional, focando em atender às necessidades específicas de cada aluno. Se procura aulas de apoio, inglês ou preparação para exames e atividades extracurriculares, está no lugar certo.",
+    "tutoring": {
+      "title": "Aulas de Apoio Escolar",
+      "description": "As nossas aulas de apoio são dirigidas a crianças e adolescentes que precisam de ajuda adicional em disciplinas escolares.",
+      "features": {
+        "recover": "Recuperar conteúdos importantes",
+        "improve": "Melhorar o desempenho em sala de aula",
+        "develop": "Desenvolver confiança e autonomia nos estudos"
+      }
+    },
+    "exams": {
+      "title": "Preparação para Exames",
+      "description": "Se o objetivo é destacar-se em exames e certificações, o nosso programa de preparação é feito à medida.",
+      "features": {
+        "school": "Exames escolares e vestibulares",
+        "certifications": "Certificações de inglês, como TOEFL, IELTS e Cambridge",
+        "specific": "Provas específicas para intercâmbio ou programas académicos"
+      }
+    },
+    "activities": {
+      "title": "Atividades Extracurriculares",
+      "description": "Oferecemos também atividades que complementam a aprendizagem e estimulam o desenvolvimento integral.",
+      "features": {
+        "clubs": "Clubes de conversação em inglês",
+        "workshops": "Workshops temáticos e oficinas práticas",
+        "events": "Eventos culturais e competições para incentivar o uso do idioma"
+      }
+    },
+    "cta": {
+      "title": "Pronto para começar?",
+      "subtitle": "Entre em contacto connosco e descubra como podemos ajudar no seu desenvolvimento.",
+      "button": "Agende uma Aula Experimental",
+      "call": "Ligue Agora",
+      "knowMore": "Saber Mais"
+    }
+  },
+  "Contact": {
+    "title": "Entre em Contacto",
+    "subtitle": "Estamos aqui para responder a todas as suas perguntas. Entre em contacto connosco e descubra como podemos ajudar no seu inglês.",
+    "getInTouch": "Fale Connosco",
+    "contactInfo": "Informações de Contacto",
+    "address": {
+      "title": "Endereço",
+      "street": "Praça da República, 52",
+      "city": "Montijo, 2870-235",
+      "full": "Praça da República, 52, Montijo - Portugal"
+    },
+    "phone": {
+      "title": "Telefone"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "hours": {
+      "title": "Horário de Funcionamento",
+      "monday": "Segunda: 18:30-21:30",
+      "tuesday": "Terça: 08:30-10:00 e 18:30-21:30",
+      "wednesday": "Quarta: 08:30-10:00 e 18:00-20:00",
+      "closed": "Quinta a Domingo: Encerrado"
+    },
+    "socialMedia": "Redes Sociais",
+    "form": {
+      "title": "Envie-nos uma mensagem",
+      "subtitle": "Respondemos em até 24 horas úteis"
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "subtitle": "Encontre respostas para as perguntas mais comuns sobre os nossos serviços.",
+      "q1": "Como posso agendar uma aula experimental?",
+      "a1": "Pode agendar uma aula experimental gratuita através do nosso formulário de contacto, por telefone ou visitando-nos presencialmente na nossa escola.",
+      "q2": "Qual é a duração das aulas?",
+      "a2": "As nossas aulas regulares têm duração de 60 minutos, mas também oferecemos opções de 90 minutos para níveis mais avançados.",
+      "q3": "Vocês oferecem preparação para exames de certificação?",
+      "a3": "Sim, oferecemos cursos específicos para preparação de exames como Cambridge, IELTS, TOEFL e outros certificados internacionais.",
+      "q4": "Posso cancelar ou remarcar uma aula?",
+      "a4": "Sim, as aulas podem ser remarcadas com pelo menos 24 horas de antecedência, sujeito à disponibilidade dos professores."
+    }
+  },
+  "Courses": {
+    "title": "Cursos de Inglês",
+    "children": {
+      "title": "Inglês para Crianças",
+      "description": "O nosso programa infantil é cuidadosamente desenvolvido para introduzir o inglês de forma lúdica e interativa, respeitando o ritmo de cada criança.",
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para crianças."
+    },
+    "teenagers": {
+      "title": "Inglês para Adolescentes",
+      "description": "Os cursos para adolescentes são projetados para desenvolver as competências linguísticas de maneira progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adolescentes."
+    },
+    "adults": {
+      "title": "Inglês para Adultos",
+      "description": "Cursos direcionados tanto para iniciantes quanto para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adultos."
+    }
+  }
+}
