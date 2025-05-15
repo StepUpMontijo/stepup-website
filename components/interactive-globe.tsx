@@ -201,8 +201,8 @@ function Globe() {
       if (distanceFromClick > 0.01) {
         hasMovedRef.current = true;
         meshRef.current.rotation.y += deltaX * 0.5;
-        meshRef.current.rotation.x += deltaY * 0.5;
-        setMomentum({ x: deltaX * 0.5, y: deltaY * 0.5 });
+        meshRef.current.rotation.x -= deltaY * 0.5;
+        setMomentum({ x: deltaX * 0.5, y: -deltaY * 0.5 });
       }
 
       previousMousePosition.current = { x: state.mouse.x, y: state.mouse.y };
