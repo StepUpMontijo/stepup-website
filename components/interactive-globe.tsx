@@ -159,9 +159,8 @@ function Globe() {
   const meshRef = useRef<THREE.Mesh>(null);
   const rotationSpeed = 0.0005;
   const [dragging, setDragging] = useState(false);
-  const [scale, setScale] = useState(0); // Começar pequeno e depois aumentar
+  const [scale, setScale] = useState(0);
 
-  // Add state to store rotation inertia
   const [momentum, setMomentum] = useState({ x: 0, y: 0 });
   const previousMousePosition = useRef({ x: 0, y: 0 });
   const initialClickPosition = useRef({ x: 0, y: 0 });
@@ -169,10 +168,9 @@ function Globe() {
 
   // Load textures with useMemo for caching
   const earthTexture = useTexture("/images/earth-texture.webp", (texture) => {
-    // Optimize the texture to reduce memory consumption
     texture.minFilter = THREE.LinearFilter;
-    texture.generateMipmaps = false; // Disable mipmaps to save memory
-    texture.anisotropy = 1; // Minimum value to save memory
+    texture.generateMipmaps = false;
+    texture.anisotropy = 1;
   });
 
   // Entry animation effect
@@ -184,55 +182,40 @@ function Globe() {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Reduce quality and complexity - use fewer segments for the sphere
-  const sphereArgs = useMemo(() => [1, 32, 32] as [number, number, number], []); // Reduced from 64x64 to 32x32
+  const sphereArgs = useMemo(() => [1, 32, 32] as [number, number, number], []);
 
-  // Rotation and interactivity with the mouse - optimized for fewer calculations
   useFrame((state) => {
     if (!meshRef.current) return;
 
-    // Automatic rotation always active
     meshRef.current.rotation.y += rotationSpeed;
 
     if (dragging) {
-      // Calculate the difference in mouse position
       const deltaX = state.mouse.x - previousMousePosition.current.x;
       const deltaY = state.mouse.y - previousMousePosition.current.y;
 
-      // Check if the mouse has moved enough to consider it as dragging
       const distanceFromClick = Math.sqrt(
         Math.pow(state.mouse.x - initialClickPosition.current.x, 2) +
           Math.pow(state.mouse.y - initialClickPosition.current.y, 2)
       );
 
-      // Only apply rotation if the mouse actually moved (to avoid jumps on click)
       if (distanceFromClick > 0.01) {
         hasMovedRef.current = true;
-
-        // Apply direct rotation based on mouse movement
         meshRef.current.rotation.y += deltaX * 0.5;
         meshRef.current.rotation.x += deltaY * 0.5;
-
-        // Store momentum for inertia
         setMomentum({ x: deltaX * 0.5, y: deltaY * 0.5 });
       }
 
-      // Update previous mouse position
       previousMousePosition.current = { x: state.mouse.x, y: state.mouse.y };
     } else {
-      // Apply inertia when not dragging, only if there has been movement
       if (hasMovedRef.current) {
         meshRef.current.rotation.y += momentum.x;
         meshRef.current.rotation.x += momentum.y;
-
-        // Gradually reduce the momentum
         setMomentum((prev) => ({
           x: prev.x * 0.95,
           y: prev.y * 0.95,
         }));
       }
 
-      // Smooth entry animation
       if (meshRef.current.scale.x < scale) {
         const newScale = THREE.MathUtils.lerp(
           meshRef.current.scale.x,
@@ -244,24 +227,24 @@ function Globe() {
     }
   });
 
-  // Functions to handle pointer events
   const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
-    setDragging(true);
-    hasMovedRef.current = false; // Reset the movement state
+    // Check if the click was actually on the globe
+    if (event.object === meshRef.current) {
+      setDragging(true);
+      hasMovedRef.current = false;
 
-    // Store the initial click position
-    if (event.nativeEvent) {
-      const { clientX, clientY } = event.nativeEvent;
-      const x = (clientX / window.innerWidth) * 2 - 1;
-      const y = -(clientY / window.innerHeight) * 2 + 1;
-      initialClickPosition.current = { x, y };
-      previousMousePosition.current = { x, y };
+      if (event.nativeEvent) {
+        const { clientX, clientY } = event.nativeEvent;
+        const x = (clientX / window.innerWidth) * 2 - 1;
+        const y = -(clientY / window.innerHeight) * 2 + 1;
+        initialClickPosition.current = { x, y };
+        previousMousePosition.current = { x, y };
+      }
     }
   };
 
   const handlePointerUp = () => {
     setDragging(false);
-    // If there was no significant movement, reset the momentum to avoid sliding
     if (!hasMovedRef.current) {
       setMomentum({ x: 0, y: 0 });
     }
@@ -271,7 +254,7 @@ function Globe() {
     <Sphere
       args={sphereArgs}
       ref={meshRef}
-      scale={0.2} // Start small
+      scale={0.2}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerLeave={handlePointerUp}
@@ -280,8 +263,8 @@ function Globe() {
       <meshBasicMaterial
         map={earthTexture}
         transparent
-        opacity={0.85} // Reduced opacity to increase brightness
-        color="#ffffff" // Base white color more intense
+        opacity={0.85}
+        color="#ffffff"
       />
     </Sphere>
   );
@@ -337,14 +320,13 @@ function shuffleArray(array: IconType[]): IconType[] {
 }
 
 // Component for the decorative icons
-function DecorativeIcons() {
+export function DecorativeIcons() {
   // State to control if we are on the client or server
   const isClient = useIsMounted();
 
   // Ensure the selected icons are unique
   const uniqueIcons = useMemo(() => {
     if (!isClient) return [];
-    // Shuffle the array to ensure random selection but without repetition
     return shuffleArray(availableIcons).slice(0, 12);
   }, [isClient]);
 
@@ -604,19 +586,20 @@ export default function InteractiveGlobe() {
       {/* Modern background with light spots */}
       <ModernLightBackground />
 
-      <div className="absolute inset-0 cursor-grab active:cursor-grabbing">
+      <div className="absolute inset-0 pointer-events-none">
         <Canvas
           camera={{ position: [0, 0, 4], fov: 55 }}
-          dpr={1} // Reduced to 1 to save memory
-          frameloop="always" // Set to ensure continuous animation
+          dpr={1}
+          frameloop="always"
           gl={{
-            antialias: false, // Disabled to save memory
+            antialias: false,
             powerPreference: "low-power",
             depth: true,
             stencil: false,
             alpha: true,
           }}
-          performance={{ min: 0.5 }} // Allow performance reduction to save resources
+          performance={{ min: 0.5 }}
+          className="pointer-events-none"
         >
           <ambientLight intensity={1.0} />
           <directionalLight
@@ -624,13 +607,14 @@ export default function InteractiveGlobe() {
             intensity={1.5}
             color="#ffffff"
           />
-          <Globe />
+          <group>
+            <Globe />
+          </group>
           <OrbitControls
+            enabled={false}
             enableZoom={false}
             enablePan={false}
-            rotateSpeed={0.5}
-            dampingFactor={0.1}
-            enableDamping={false} // Disabled to save calculations
+            enableRotate={false}
           />
         </Canvas>
       </div>

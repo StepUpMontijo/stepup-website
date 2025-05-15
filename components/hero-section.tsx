@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import InteractiveGlobe from "./interactive-globe";
+import InteractiveGlobe, { DecorativeIcons } from "./interactive-globe";
 import { useIsMounted } from "@/hooks/useIsMounted";
 
 // Component for the typewriter effect with vertical cursor style
@@ -153,9 +153,14 @@ export default function HeroSection() {
       {/* More transparent gradient for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/80 z-10" />
 
-      {/* Globo interativo */}
-      <div className="absolute inset-0 z-20">
+      {/* Interactive Globe - only desktop */}
+      <div className="absolute inset-0 z-20 hidden lg:block">
         <InteractiveGlobe />
+      </div>
+
+      {/* Decorative Icons - only mobile/tablet */}
+      <div className="absolute inset-0 z-20 lg:hidden">
+        <DecorativeIcons />
       </div>
 
       {/* Hero content - centered */}
