@@ -13,9 +13,9 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Come learn English at StepUp!",
-      "subtitle": "Discover the methodology that has already transformed the lives of hundreds of students in Portugal",
-      "cta": "Schedule a trial class"
+      "title": "Learn English with StepUp!",
+      "subtitle": "Experience the methodology that has transformed hundreds of students' lives across Portugal",
+      "cta": "Book a free trial class"
     },
     "form": {
       "name": "Name",
@@ -25,27 +25,27 @@
     },
     "about": {
       "title": "About StepUp",
-      "description": "English school in Montijo that combines innovation and experience, with courses adapted for all ages and levels.",
+      "description": "An innovative English school in Montijo combining experience with personalized courses for all ages and proficiency levels.",
       "cta": "Learn More"
     },
     "gallery": {
       "title": "Our Facilities",
-      "subtitle": "Discover the welcoming and modern environment where our students learn and evolve.",
+      "subtitle": "Explore our welcoming and modern environment where students learn and grow.",
       "room": {
         "title": "Classroom",
-        "description": "A comfortable space where students can study, interact and enjoy the welcoming environment of our school.",
+        "description": "A comfortable space where students study, interact and enjoy our school's welcoming atmosphere.",
         "alt": "StepUp classroom"
       },
       "exterior": {
-        "title": "School Facade",
-        "description": "Our school is located in a central and easily accessible area in Montijo.",
-        "alt": "Exterior facade of StepUp school"
+        "title": "School Exterior",
+        "description": "Our school is centrally located and easily accessible in Montijo.",
+        "alt": "Exterior view of StepUp school"
       },
       "studentActivity": {
-        "title": "Practical Activities",
-        "description": "Our students participate in dynamic and interactive activities that make learning English more effective, fun and engaging.",
-        "alt": "Student participating in a practical activity",
-        "alt2": "Students working in groups on an interactive activity"
+        "title": "Interactive Activities",
+        "description": "Our students engage in dynamic activities that make learning English more effective, enjoyable and engaging.",
+        "alt": "Student participating in a hands-on activity",
+        "alt2": "Students collaborating on an interactive group project"
       },
       "learnMore": "Learn more",
       "viewFullSize": "View full size",
@@ -53,113 +53,113 @@
     },
     "features": {
       "title": "Why choose StepUp?",
-      "subtitle": "StepUp is an English school that combines innovation with experience. Here, your success is our greatest achievement.",
+      "subtitle": "StepUp combines innovation with experience. Your success is our greatest achievement.",
       "cards": {
         "welcoming": {
-          "title": "Welcoming Environment",
-          "description": "We create an environment marked by support, patience and constant encouragement. We value every progress, because we know that every step counts."
+          "title": "Supportive Environment",
+          "description": "We foster an atmosphere of support, patience and continuous encouragement. We celebrate every achievement because we know that every step matters."
         },
         "learning": {
-          "title": "Learning For Everyone",
-          "description": "Our mission is to provide adults and children with the opportunity to acquire English. We believe that everyone can learn, even those who thought they wouldn't be able to."
+          "title": "Inclusive Learning",
+          "description": "We're committed to making English accessible to everyone, adults and children alike. We believe anyone can learn, even those who thought it wasn't possible."
         },
         "experience": {
-          "title": "Personalized Experience",
-          "description": "We adapt our courses for different ages and levels. Our team of experienced teachers offers personalized attention to each student."
+          "title": "Personalized Approach",
+          "description": "Our courses are tailored to different ages and proficiency levels. Our experienced teachers provide individual attention to each student."
         },
         "location": {
-          "title": "Prime Location",
-          "description": "We are located in Montijo, with modern and comfortable classrooms, designed to provide the best learning environment."
+          "title": "Convenient Location",
+          "description": "Located in Montijo, our modern and comfortable classrooms are designed to create the optimal learning environment."
         },
         "services": {
-          "title": "Complementary Services",
-          "description": "In addition to regular English courses, we offer complementary services that enrich the learning experience and accelerate your progress."
+          "title": "Additional Services",
+          "description": "Beyond our standard English courses, we offer complementary services that enhance the learning experience and accelerate your progress."
         }
       }
     },
     "courses": {
       "title": "Courses",
-      "subtitle": "Discover our courses and find the one that best suits your needs.",
+      "subtitle": "Explore our range of courses and find the perfect fit for your needs.",
       "learnMore": "Learn More",
       "children": {
         "title": "English for Children",
-        "description": "Our children's program is carefully developed to introduce English in a playful and interactive way, respecting each child's pace.",
+        "description": "Our children's program introduces English through fun and interactive activities, respecting each child's individual learning pace.",
         "cta": "Learn More"
       },
       "teenagers": {
         "title": "English for Teenagers",
-        "description": "Courses for teenagers are designed to develop language skills progressively, focusing on communication and preparation for more advanced levels.",
+        "description": "Our teenage courses progressively develop language skills with a focus on communication and preparation for advanced proficiency.",
         "cta": "Learn More"
       },
       "adults": {
         "title": "English for Adults",
-        "description": "Courses aimed at both beginners and those who already have some knowledge of the language. Classes are dynamic and adapted to students' needs.",
+        "description": "Courses designed for both beginners and those with existing knowledge. Our dynamic classes adapt to students' specific needs and goals.",
         "cta": "Learn More"
       }
     },
     "activities": {
       "title": "Activities",
-      "description": "In addition to regular English courses, StepUp also offers complementary services that enrich the learning experience.",
+      "description": "In addition to our regular English courses, StepUp offers complementary services that enhance the learning experience.",
       "cta": "Learn More"
     },
     "testimonials": {
-      "title": "Our Students Approve!",
-      "subtitle": "See what our students and parents have to say about StepUp.",
+      "title": "Our Students Love Us!",
+      "subtitle": "See what students and parents say about their StepUp experience.",
       "dragToScroll": "Drag to see more",
       "hoverToPause": "Hover to pause",
       "testimonial1": {
-        "text": "StepUp not only taught English to my son, but made him love learning. His development has been incredible.",
+        "text": "StepUp didn't just teach my son English—they made him love learning. His progress has been incredible.",
         "name": "Marcia",
-        "role": "Student's mother"
+        "role": "Parent"
       },
       "testimonial2": {
-        "text": "I love the classes at StepUp! They are fun and very engaging, always with something new to learn.",
+        "text": "I love the classes at StepUp! They're fun and engaging, with something new to learn every time.",
         "name": "Marcia",
         "role": "Student"
       },
       "testimonial3": {
-        "text": "The school has a great structure, very patient and caring teachers, they help students immensely and are super friendly! It has an incredible organization of subjects, and they help a lot! I feel super comfortable learning English.",
+        "text": "The school has excellent facilities, patient and caring teachers who are incredibly supportive and friendly! The curriculum is wonderfully organized. I feel completely comfortable learning English here.",
         "name": "Anonymous",
         "role": "Student"
       },
       "testimonial4": {
-        "text": "Very comfortable place, very good classes. Extremely kind teacher, treats all students well and explains very well. Communication with the school is great, they always treat us with great education. I've been here for a few months and I already feel the difference in my English. Extremely good.",
+        "text": "Such a comfortable environment with excellent classes. The teacher is extremely kind, treats all students well and explains everything clearly. Communication with the school is outstanding—always professional and courteous. After just a few months, I already notice a significant improvement in my English. Truly exceptional.",
         "name": "Kelssy",
         "role": "Student"
       },
       "testimonial5": {
-        "text": "I learned a lot of English at this school, the teachers are super friendly and attentive, it helped me a lot in my professional life.",
+        "text": "I've learned so much English at this school. The teachers are incredibly friendly and attentive, which has greatly benefited my professional life.",
         "name": "Gabriel Ferreira",
         "role": "Student"
       },
       "testimonial6": {
-        "text": "Very good school 😍 my son loves it",
+        "text": "Wonderful school 😍 my son absolutely loves it",
         "name": "Débora Santos",
-        "role": "Student's mother"
+        "role": "Parent"
       },
       "testimonial7": {
-        "text": "I have learned a lot, and especially various activities to improve our speech and overcome our fears. We feel encouraged to speak and embrace this environment. Thank you team.",
+        "text": "I've learned so much, especially through activities that improve my speaking skills and help overcome my fears. We're encouraged to speak and embrace the learning environment. Thank you to the entire team.",
         "name": "Isousa Sousa",
         "role": "Student"
       },
       "testimonial8": {
-        "text": "Well-structured school, focused on student learning.",
+        "text": "Well-structured school with a genuine focus on student learning.",
         "name": "Lorena Brandão",
         "role": "Student"
       },
       "testimonial9": {
-        "text": "The classes are well planned and fun.",
+        "text": "The classes are thoughtfully planned and enjoyable.",
         "name": "Márcia Silva",
         "role": "Student"
       },
       "testimonial10": {
-        "text": "The school has attentive and dedicated teachers, has a welcoming environment and is in an excellent location. I have learned a lot since I started my studies here.",
+        "text": "The school has attentive and dedicated teachers, a welcoming atmosphere, and an excellent location. I've made tremendous progress since I started studying here.",
         "name": "Maria Zazirskas",
         "role": "Student"
       }
     },
     "contact": {
-      "title": "For more Information",
+      "title": "For More Information",
       "address": "Praça da República, 52, Montijo - Portugal",
       "email": "admin@stepupidiomas.pt",
       "phone": "+351 923 076 858"
@@ -202,7 +202,7 @@
   },
   "About": {
     "title": "About Us",
-    "subtitle": "Discover who we are, our methodology and why we are the right choice for your English learning.",
+    "subtitle": "Discover who we are, our methodology, and why we're the right choice for your English learning journey.",
     "stats": {
       "experience": "Years of experience",
       "students": "Satisfied students",
@@ -210,59 +210,59 @@
       "teachers": "Qualified teachers"
     },
     "history": {
-      "title": "Our History",
-      "quote": "We believe that learning English should be a pleasant and transformative journey.",
-      "text1": "StepUp was born in 2024 from the vision of English teachers passionate about teaching and frustrated with traditional methods that didn't truly engage students.",
-      "text2": "Our journey began in Montijo with the dream of transforming language learning into a more engaging, personalized and effective experience. We maintain our essence since day one: teaching English in a practical way connected to the real world.",
-      "text3": "Today, StepUp is proud to have helped dozens of students achieve fluency and confidence in the English language, opening doors to personal and professional opportunities."
+      "title": "Our Story",
+      "quote": "We believe learning English should be an enjoyable and transformative journey.",
+      "text1": "StepUp was founded in 2024 by passionate English teachers frustrated with traditional methods that failed to truly engage students.",
+      "text2": "Our journey began in Montijo with a vision to transform language learning into a more engaging, personalized, and effective experience. From day one, our essence remains unchanged: teaching practical English connected to the real world.",
+      "text3": "Today, StepUp proudly helps dozens of students achieve fluency and confidence in English, opening doors to personal and professional opportunities."
     },
     "methodology": {
       "title": "Our Methodology",
-      "subtitle": "At StepUp, we believe that effective language learning combines theory and practice in a welcoming and stimulating environment.",
+      "subtitle": "At StepUp, we believe effective language learning combines theory and practice in a welcoming and stimulating environment.",
       "cards": {
         "communicative": {
           "title": "Communicative",
-          "description": "We prioritize conversation from the beginning, creating an immersive environment where students are encouraged to express themselves in English from the first class."
+          "description": "We prioritize conversation from day one, creating an immersive environment where students are encouraged to express themselves in English from the very first class."
         },
         "personalized": {
           "title": "Personalized",
-          "description": "We adapt the content and pace of classes to the specific needs and goals of each student, ensuring efficient and targeted learning."
+          "description": "We tailor content and pacing to each student's specific needs and goals, ensuring efficient and targeted learning."
         },
         "dynamic": {
           "title": "Dynamic",
-          "description": "We use a variety of resources and interactive activities to make classes dynamic and engaging, facilitating the absorption of knowledge."
+          "description": "We utilize diverse resources and interactive activities to keep classes engaging and stimulating, facilitating natural knowledge absorption."
         }
       }
     },
     "teachers": {
       "title": "Qualified Teachers",
-      "subtitle": "Our team consists of professionals passionate about teaching and with extensive experience in the field.",
+      "subtitle": "Our team consists of passionate teaching professionals with extensive experience in language education.",
       "team": {
         "pf1": {
           "name": "Teacher 1",
           "role": "Pedagogical Coordinator",
-          "description": "Certified teacher with over 10 years of experience teaching English to all ages."
+          "description": "Certified teacher with over 10 years of experience teaching English to all age groups."
         },
         "pf2": {
           "name": "Teacher 2",
           "role": "Senior Teacher",
-          "description": "Specialist in preparation for international exams with training in England."
+          "description": "Specialist in international exam preparation with training in England."
         },
         "pf3": {
           "name": "Teacher 3",
           "role": "Native Teacher",
-          "description": "Native teacher from the USA with experience in teaching Business English and conversation."
+          "description": "Native American English teacher experienced in Business English and conversation skills."
         },
         "pf4": {
           "name": "Teacher 4",
           "role": "Children's Specialist",
-          "description": "Specialist in teaching children, with playful and interactive methodologies."
+          "description": "Specialist in teaching children through playful and interactive methodologies."
         }
       }
     },
     "location": {
-      "title": "Where We Are",
-      "subtitle": "Visit our school in the heart of Montijo and discover the perfect environment to learn English.",
+      "title": "Our Location",
+      "subtitle": "Visit our school in the heart of Montijo and discover the perfect environment for learning English.",
       "address": {
         "title": "Address",
         "street": "Praça da República, 52",
@@ -283,8 +283,8 @@
       }
     },
     "cta": {
-      "title": "Ready to start your journey?",
-      "subtitle": "Schedule a free trial class and discover why StepUp is the right choice for your English learning.",
+      "title": "Ready to begin your journey?",
+      "subtitle": "Book a free trial class and discover why StepUp is the right choice for your English learning.",
       "call": "Call now",
       "button": "Schedule Free Class",
       "knowMore": "Learn More"
@@ -293,45 +293,45 @@
   "Services": {
     "title": "Our Services",
     "subtitle": "Connecting you to the best learning opportunities",
-    "description": "At our school, we offer services that go beyond traditional teaching, focusing on meeting the specific needs of each student. If you're looking for tutoring, English or exam preparation and extracurricular activities, you're in the right place.",
+    "description": "We offer services that go beyond traditional teaching, focusing on each student's specific needs. Whether you're looking for tutoring, English instruction, exam preparation, or extracurricular activities, you've come to the right place.",
     "tutoring": {
-      "title": "School Tutoring",
-      "description": "Our tutoring classes are aimed at children and teenagers who need additional help in school subjects.",
+      "title": "Academic Tutoring",
+      "description": "Our tutoring sessions help children and teenagers who need additional support with school subjects.",
       "features": {
-        "recover": "Recover important content",
-        "improve": "Improve classroom performance",
-        "develop": "Develop confidence and autonomy in studies"
+        "recover": "Master essential content",
+        "improve": "Enhance classroom performance",
+        "develop": "Build confidence and study independence"
       }
     },
     "exams": {
       "title": "Exam Preparation",
-      "description": "If your goal is to excel in exams and certifications, our preparation program is tailored for you.",
+      "description": "If your goal is to excel in exams and certifications, our specialized preparation program is perfect for you.",
       "features": {
-        "school": "School exams and entrance exams",
-        "certifications": "English certifications, such as TOEFL, IELTS and Cambridge",
-        "specific": "Specific tests for exchange or academic programs"
+        "school": "School exams and entrance tests",
+        "certifications": "English certifications including TOEFL, IELTS, and Cambridge",
+        "specific": "Specialized tests for exchange or academic programs"
       }
     },
     "activities": {
       "title": "Extracurricular Activities",
-      "description": "We also offer activities that complement learning and stimulate integral development.",
+      "description": "We offer complementary activities that enhance learning and promote well-rounded development.",
       "features": {
         "clubs": "English conversation clubs",
-        "workshops": "Thematic workshops and practical workshops",
+        "workshops": "Themed and practical workshops",
         "events": "Cultural events and competitions to encourage language use"
       }
     },
     "cta": {
-      "title": "Ready to start?",
-      "subtitle": "Contact us and discover how we can help in your development.",
-      "button": "Schedule a Trial Class",
+      "title": "Ready to get started?",
+      "subtitle": "Contact us to discover how we can support your development.",
+      "button": "Book a Trial Class",
       "call": "Call Now",
       "knowMore": "Learn More"
     }
   },
   "Contact": {
     "title": "Contact Us",
-    "subtitle": "We're here to answer all your questions. Get in touch with us and discover how we can help with your English learning journey.",
+    "subtitle": "We're here to answer all your questions. Reach out to discover how we can help with your English learning journey.",
     "getInTouch": "Get in Touch",
     "contactInfo": "Contact Information",
     "address": {
@@ -360,33 +360,167 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to the most common questions about our services.",
-      "q1": "How can I schedule a trial class?",
-      "a1": "You can schedule a free trial class through our contact form, by phone, or by visiting us in person at our school.",
+      "subtitle": "Find answers to common questions about our services.",
+      "q1": "How do I book a trial class?",
+      "a1": "You can book a free trial class through our contact form, by phone, or by visiting our school in person.",
       "q2": "How long are the classes?",
-      "a2": "Adult classes are 90 minutes long and classes for children and teenagers are 60 minutes long.",
-      "q3": "Do you offer preparation for certification exams?",
-      "a3": "Yes, we offer specific courses for exam preparation such as Cambridge, IELTS, TOEFL, and other international certificates.",
-      "q4": "Can I cancel or reschedule a class?",
-      "a4": "Classes are scheduled weekly on the same day and time. While rescheduling individual sessions is not possible, we offer additional practice classes for students who need extra support."
+      "a2": "Adult classes run for 90 minutes, while children's and teenagers' classes are 60 minutes long.",
+      "q3": "Do you offer certification exam preparation?",
+      "a3": "Yes, we offer specialized courses for exam preparation including Cambridge, IELTS, TOEFL, and other international certificates.",
+      "q4": "Can I reschedule a class?",
+      "a4": "Classes are scheduled weekly at the same day and time. While rescheduling individual sessions isn't possible, we offer additional practice classes for students needing extra support."
     }
   },
   "Courses": {
     "title": "English Courses",
     "children": {
       "title": "English for Children",
-      "description": "Our children's program is carefully developed to introduce English in a playful and interactive way, respecting each child's pace.",
-      "underDevelopment": "This page is under development. We will soon have detailed information about our English program for children."
+      "description": "Our children's program introduces English through fun and interactive activities, respecting each child's learning pace.",
+      "underDevelopment": "This page is under development. Detailed information about our children's English program will be available soon.",
+      "heroTitle": "Ages 4-10",
+      "mainTitle": "English for Children",
+      "intro": "We understand how important it is for parents to find a course that combines learning, fun, and real results. We help children develop English naturally and effectively, with specialized attention for different age groups.",
+      "approach": "Our teaching approach respects each child's individual pace. We use playful activities, music, games, and stories to make learning English interactive and enjoyable. We create a welcoming environment where children feel confident to explore a new language.",
+      "activities": {
+        "title": "Our Activities",
+        "playful": {
+          "title": "Playful Activities",
+          "description": "Make learning natural and fun while stimulating creativity and engagement."
+        },
+        "music": {
+          "title": "Music",
+          "description": "Enhances pronunciation, vocabulary, and listening skills in an engaging way."
+        },
+        "games": {
+          "title": "Games",
+          "description": "Develop quick thinking, vocabulary building, and English interaction."
+        },
+        "stories": {
+          "title": "Stories",
+          "description": "Build comprehension, vocabulary, and cultural awareness through engaging narratives."
+        }
+      },
+      "courses": {
+        "title": "Our Courses",
+        "preKids": {
+          "title": "Pre-Kids (Ages 4-6)",
+          "description": "Our Pre-Kids course is designed for children ages 4-6, during a crucial developmental stage. At this age, we focus on essential skills including:",
+          "skills": [
+            "Recognition of basic English sounds and words.",
+            "Development of motor and cognitive skills through hands-on activities.",
+            "Introduction to everyday expressions and foundational vocabulary."
+          ]
+        },
+        "kids": {
+          "title": "Kids (Ages 7-10)",
+          "description": "Our Kids course serves children ages 7-10, focusing on oral communication, listening comprehension, and expanded vocabulary. Children learn to:",
+          "skills": [
+            "Form simple sentences and express basic ideas in English.",
+            "Participate in interactive games that encourage using English in everyday situations.",
+            "Progress with personalized support that respects their individual learning journey."
+          ]
+        }
+      },
+      "cta": {
+        "title": "Want to give your child a solid language foundation?",
+        "description": "Contact us today! Our team will happily answer your questions and help you choose the ideal course.",
+        "button": "Contact Us"
+      },
+      "transformativeExperience": "✨ Transformative Experience",
+      "noCommitment": "No commitment",
+      "response24h": "Response within 24h"
     },
     "teenagers": {
       "title": "English for Teenagers",
-      "description": "Courses for teenagers are designed to develop language skills progressively, focusing on communication and preparation for more advanced levels.",
-      "underDevelopment": "This page is under development. We will soon have detailed information about our English program for teenagers."
+      "description": "Our teenage courses progressively develop language skills, focusing on communication and preparation for advanced proficiency.",
+      "underDevelopment": "This page is under development. Detailed information about our teenage English program will be available soon.",
+      "heroTitle": "Ages 12-17",
+      "mainTitle": "English for Teenagers",
+      "intro": "Prepare for the future with a course designed specifically for young people eager to develop their English skills!",
+      "approach": "Our method encourages creativity, teamwork, and confidence in using English. We focus on interactive, practical classes where teenagers can express themselves in a supportive and stimulating environment.",
+      "activities": {
+        "title": "What We Offer",
+        "interactive": {
+          "title": "Interactive classes",
+          "description": "Activities that blend learning with enjoyment."
+        },
+        "exams": {
+          "title": "Exam preparation",
+          "description": "Support for certifications like TOEFL and Cambridge."
+        },
+        "communication": {
+          "title": "Communication focus",
+          "description": "Practical conversation skills for everyday and academic situations."
+        },
+        "schedule": {
+          "title": "Flexible schedules",
+          "description": "Compatible with school commitments."
+        }
+      },
+      "courses": {
+        "title": "Our Course",
+        "teens": {
+          "title": "Teens (Ages 12-17)",
+          "description": "Specially developed for teenagers wanting to enhance their English skills, focusing on:",
+          "skills": [
+            "Development of oral and written communication skills.",
+            "Preparation for real-world situations and international exams.",
+            "Integration of technology and multimedia resources to enrich learning."
+          ]
+        }
+      },
+      "cta": {
+        "title": "Ready to invest in your teenager's future?",
+        "description": "Contact us to discover how our teenage program can open doors to a world of opportunities.",
+        "button": "Contact Us"
+      },
+      "transformativeExperience": "✨ Transformative Experience",
+      "noCommitment": "No commitment",
+      "response24h": "Response within 24h"
     },
     "adults": {
       "title": "English for Adults",
-      "description": "Courses aimed at both beginners and those who already have some knowledge of the language. Classes are dynamic and adapted to students' needs.",
-      "underDevelopment": "This page is under development. We will soon have detailed information about our English program for adults."
+      "description": "Courses designed for both beginners and those with existing knowledge. Our dynamic classes adapt to students' specific needs.",
+      "underDevelopment": "This page is under development. Detailed information about our adult English program will be available soon.",
+      "heroTitle": "Ages 18+",
+      "mainTitle": "English for Adults",
+      "intro": "Looking to learn English for work, travel, or personal goals? Our adult course offers:",
+      "approach": "We've developed a method that respects each student's pace while focusing on practical results. Our classes blend theory and practice in a supportive environment where you can build your skills with confidence.",
+      "activities": {
+        "title": "What We Offer",
+        "practical": {
+          "title": "Practical focus",
+          "description": "Real-world applications that make learning relevant."
+        },
+        "material": {
+          "title": "Current materials",
+          "description": "Resources that address today's communication needs."
+        },
+        "levels": {
+          "title": "All proficiency levels",
+          "description": "Progress at your own pace from beginner to advanced."
+        },
+        "networking": {
+          "title": "Community learning",
+          "description": "Connect with like-minded people and practice English in groups."
+        }
+      },
+      "advantages": {
+        "title": "Adult course advantages",
+        "items": [
+          "Development of professional communication skills.",
+          "Flexible scheduling for working professionals and students.",
+          "Efficient learning with experienced instructors."
+        ]
+      },
+      "cta": {
+        "title": "Ready to advance your career?",
+        "description": "Contact us to discover how our adult program can transform your personal and professional life.",
+        "button": "Contact Us"
+      },
+      "transformativeExperience": "✨ Transformative Experience",
+      "noCommitment": "No commitment",
+      "response24h": "Response within 24h"
     }
   }
 }

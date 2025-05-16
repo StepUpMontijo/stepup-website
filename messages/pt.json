@@ -13,14 +13,14 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Venha aprender inglês na StepUp!",
+      "title": "Aprenda inglês na StepUp!",
       "subtitle": "Descubra a metodologia que já transformou a vida de centenas de alunos em Portugal",
-      "cta": "Agende uma aula experimental"
+      "cta": "Marque uma aula experimental"
     },
     "form": {
       "name": "Nome",
       "phone": "Telefone",
-      "contactMe": "Entre em contacto comigo",
+      "contactMe": "Contacte-me",
       "submit": "Enviar"
     },
     "about": {
@@ -33,7 +33,7 @@
       "subtitle": "Conheça o ambiente acolhedor e moderno onde os nossos alunos aprendem e evoluem.",
       "room": {
         "title": "Sala",
-        "description": "Um espaço confortável onde os alunos podem estudar, interagir e aproveitar o ambiente acolhedor da nossa escola.",
+        "description": "Um espaço confortável onde os alunos podem estudar, interagir e desfrutar do ambiente acolhedor da nossa escola.",
         "alt": "Sala de aula da StepUp"
       },
       "exterior": {
@@ -52,7 +52,7 @@
       "clickToEnlarge": "Clique para ampliar"
     },
     "features": {
-      "title": "Por que escolher a StepUp?",
+      "title": "Porquê escolher a StepUp?",
       "subtitle": "A StepUp é uma escola de inglês que combina inovação com experiência. Aqui, o seu sucesso é a nossa maior conquista.",
       "cards": {
         "welcoming": {
@@ -61,7 +61,7 @@
         },
         "learning": {
           "title": "Aprendizagem Para Todos",
-          "description": "A nossa missão é proporcionar a adultos e crianças a oportunidade de adquirir o inglês. Acreditamos que todos podem aprender, mesmo aqueles que pensaram que não seriam capazes."
+          "description": "A nossa missão é proporcionar a adultos e crianças a oportunidade de aprender inglês. Acreditamos que todos podem aprender, mesmo aqueles que pensaram que não seriam capazes."
         },
         "experience": {
           "title": "Experiência Personalizada",
@@ -73,7 +73,7 @@
         },
         "services": {
           "title": "Serviços Complementares",
-          "description": "Além dos cursos regulares de inglês, oferecemos serviços complementares que enriquecem a experiência de aprendizagem e aceleram o seu progresso."
+          "description": "Para além dos cursos regulares de inglês, oferecemos serviços complementares que enriquecem a experiência de aprendizagem e aceleram o seu progresso."
         }
       }
     },
@@ -88,18 +88,18 @@
       },
       "teenagers": {
         "title": "Inglês para Adolescentes",
-        "description": "Os cursos para adolescentes são projetados para desenvolver as competências linguísticas de maneira progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
+        "description": "Os cursos para adolescentes são concebidos para desenvolver as competências linguísticas de forma progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
         "cta": "Saiba Mais"
       },
       "adults": {
         "title": "Inglês para Adultos",
-        "description": "Cursos direcionados tanto para iniciantes quanto para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
+        "description": "Cursos direcionados tanto para iniciantes como para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
         "cta": "Saiba Mais"
       }
     },
     "activities": {
       "title": "Atividades",
-      "description": "Além dos cursos regulares de inglês, a StepUp também oferece serviços complementares que enriquecem a experiência de aprendizagem.",
+      "description": "Para além dos cursos regulares de inglês, a StepUp também oferece serviços complementares que enriquecem a experiência de aprendizagem.",
       "cta": "Saiba Mais"
     },
     "testimonials": {
@@ -113,7 +113,7 @@
         "role": "Mãe de aluno"
       },
       "testimonial2": {
-        "text": "Eu adoro as aulas na StepUp! São divertidas e muito envolventes, sempre com algo novo para aprender.",
+        "text": "Adoro as aulas na StepUp! São divertidas e muito envolventes, sempre com algo novo para aprender.",
         "name": "Marcia",
         "role": "Aluna"
       },
@@ -171,7 +171,7 @@
     },
     "accessibility": {
       "globe": {
-        "skip": "Este é um globo animado decorativo. Pressione Tab para ignorar este elemento.",
+        "skip": "Este é um globo animado decorativo. Prima Tab para ignorar este elemento.",
         "ariaLabel": "Plano de fundo decorativo com globo 3D",
         "description": "Elemento decorativo interativo representando um globo terrestre"
       }
@@ -284,9 +284,9 @@
     },
     "cta": {
       "title": "Pronto para começar a sua jornada?",
-      "subtitle": "Agende uma aula experimental gratuita e descubra por que a StepUp é a escolha certa para a sua aprendizagem de inglês.",
+      "subtitle": "Marque uma aula experimental gratuita e descubra por que a StepUp é a escolha certa para a sua aprendizagem de inglês.",
       "call": "Ligar agora",
-      "button": "Agendar Aula Grátis",
+      "button": "Marcar Aula Grátis",
       "knowMore": "Saber Mais"
     }
   },
@@ -324,7 +324,7 @@
     "cta": {
       "title": "Pronto para começar?",
       "subtitle": "Entre em contacto connosco e descubra como podemos ajudar no seu desenvolvimento.",
-      "button": "Agende uma Aula Experimental",
+      "button": "Marque uma Aula Experimental",
       "call": "Ligue Agora",
       "knowMore": "Saber Mais"
     }
@@ -361,11 +361,11 @@
     "faq": {
       "title": "Perguntas Frequentes",
       "subtitle": "Encontre respostas para as perguntas mais comuns sobre os nossos serviços.",
-      "q1": "Como posso agendar uma aula experimental?",
-      "a1": "Pode agendar uma aula experimental gratuita através do nosso formulário de contacto, por telefone ou visitando-nos presencialmente na nossa escola.",
+      "q1": "Como posso marcar uma aula experimental?",
+      "a1": "Pode marcar uma aula experimental gratuita através do nosso formulário de contacto, por telefone ou visitando-nos presencialmente na nossa escola.",
       "q2": "Qual é a duração das aulas?",
       "a2": "As aulas para adultos têm duração de 90 minutos e as aulas para crianças e adolescentes têm duração de 60 minutos.",
-      "q3": "Vocês oferecem preparação para exames de certificação?",
+      "q3": "Oferecem preparação para exames de certificação?",
       "a3": "Sim, oferecemos cursos específicos para preparação de exames como Cambridge, IELTS, TOEFL e outros certificados internacionais.",
       "q4": "Posso cancelar ou remarcar uma aula?",
       "a4": "As aulas são agendadas semanalmente no mesmo dia e hora. Embora não seja possível remarcar sessões individuais, oferecemos aulas de prática adicionais para alunos que necessitem de apoio extra."
@@ -376,17 +376,151 @@
     "children": {
       "title": "Inglês para Crianças",
       "description": "O nosso programa infantil é cuidadosamente desenvolvido para introduzir o inglês de forma lúdica e interativa, respeitando o ritmo de cada criança.",
-      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para crianças."
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para crianças.",
+      "heroTitle": "4 a 10 anos",
+      "mainTitle": "Inglês para Crianças",
+      "intro": "Sabemos como é importante para os pais encontrar um curso que combine aprendizagem, diversão e resultados reais. Aqui, ajudamos crianças a desenvolverem o inglês de maneira natural e eficaz, com atenção especial às diferentes faixas etárias.",
+      "approach": "A nossa abordagem pedagógica foi concebida para respeitar o ritmo de cada criança. Utilizamos atividades lúdicas, músicas, jogos e histórias para tornar a aprendizagem do inglês um processo interativo e prazeroso. Criamos um ambiente acolhedor e estimulante, onde as crianças se sentem confiantes para aprender e explorar uma nova língua.",
+      "activities": {
+        "title": "As Nossas Atividades",
+        "playful": {
+          "title": "Atividades Lúdicas",
+          "description": "Tornam a aprendizagem divertida e natural, estimulando a criatividade e o envolvimento."
+        },
+        "music": {
+          "title": "Música",
+          "description": "Melhoram a pronúncia, vocabulário e compreensão auditiva de forma envolvente."
+        },
+        "games": {
+          "title": "Jogos",
+          "description": "Estimulam a rapidez no raciocínio, o vocabulário e a interação em inglês."
+        },
+        "stories": {
+          "title": "Histórias",
+          "description": "Desenvolvem compreensão, vocabulário e imersão cultural através de narrativas envolventes."
+        }
+      },
+      "courses": {
+        "title": "Os Nossos Cursos",
+        "preKids": {
+          "title": "Pré-Kids (4 a 6 anos)",
+          "description": "O curso Pré-Kids é dirigido a crianças entre 4 e 6 anos, numa fase crucial de desenvolvimento. Nesta idade, trabalhamos competências básicas como:",
+          "skills": [
+            "Reconhecimento de sons e palavras simples em inglês.",
+            "Desenvolvimento da coordenação motora e cognitiva através de atividades práticas.",
+            "Introdução a expressões do quotidiano e vocabulário inicial."
+          ]
+        },
+        "kids": {
+          "title": "Kids (7 a 10 anos)",
+          "description": "O curso Kids destina-se a crianças entre 7 e 10 anos, focando no desenvolvimento da comunicação oral, compreensão auditiva e vocabulário expandido. Aqui, as crianças aprendem a:",
+          "skills": [
+            "Formar frases simples e expressar ideias básicas em inglês.",
+            "Participar em jogos interativos que estimulam o uso do idioma no dia a dia.",
+            "Avançar na aprendizagem com apoio individualizado, respeitando o seu progresso."
+          ]
+        }
+      },
+      "cta": {
+        "title": "Quer oferecer ao seu filho uma base sólida no idioma?",
+        "description": "Entre em contacto connosco agora mesmo! A nossa equipa terá todo o gosto em esclarecer dúvidas e ajudá-lo a escolher o curso ideal.",
+        "button": "Entre em contacto"
+      },
+      "transformativeExperience": "✨ Experiência Transformadora",
+      "noCommitment": "Sem compromisso",
+      "response24h": "Resposta em 24h"
     },
     "teenagers": {
       "title": "Inglês para Adolescentes",
-      "description": "Os cursos para adolescentes são projetados para desenvolver as competências linguísticas de maneira progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
-      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adolescentes."
+      "description": "Os cursos para adolescentes são concebidos para desenvolver as competências linguísticas de forma progressiva, com foco na comunicação e na preparação para níveis mais avançados.",
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adolescentes.",
+      "heroTitle": "12 a 17 anos",
+      "mainTitle": "Inglês para Adolescentes",
+      "intro": "Prepare-se para o futuro com um curso feito à medida para jovens que desejam desenvolver as suas competências em inglês!",
+      "approach": "O nosso método incentiva a criatividade, o trabalho em equipa e a confiança no uso do idioma. Apostamos em aulas interativas e práticas, onde os adolescentes podem expressar-se em inglês num ambiente seguro e estimulante.",
+      "activities": {
+        "title": "O Que Oferecemos",
+        "interactive": {
+          "title": "Aulas interativas",
+          "description": "Atividades que unem aprendizagem e diversão."
+        },
+        "exams": {
+          "title": "Preparação para exames",
+          "description": "Apoio para certificações como TOEFL e Cambridge."
+        },
+        "communication": {
+          "title": "Foco na comunicação",
+          "description": "Conversação prática para situações do dia a dia e escola."
+        },
+        "schedule": {
+          "title": "Horários flexíveis",
+          "description": "Compatível com a rotina escolar."
+        }
+      },
+      "courses": {
+        "title": "O Nosso Curso",
+        "teens": {
+          "title": "Teens (12 a 17 anos)",
+          "description": "Desenvolvido especialmente para adolescentes que desejam melhorar as suas competências em inglês, com enfoque em:",
+          "skills": [
+            "Desenvolvimento de competências de comunicação oral e escrita.",
+            "Preparação para situações reais e exames internacionais.",
+            "Uso de tecnologia e recursos audiovisuais para enriquecer a aprendizagem."
+          ]
+        }
+      },
+      "cta": {
+        "title": "Quer investir no futuro do seu filho?",
+        "description": "Entre em contacto connosco e descubra como o nosso programa para adolescentes pode abrir portas para um futuro de oportunidades.",
+        "button": "Entre em contacto"
+      },
+      "transformativeExperience": "✨ Experiência Transformadora",
+      "noCommitment": "Sem compromisso",
+      "response24h": "Resposta em 24h"
     },
     "adults": {
       "title": "Inglês para Adultos",
-      "description": "Cursos direcionados tanto para iniciantes quanto para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
-      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adultos."
+      "description": "Cursos direcionados tanto para iniciantes como para aqueles que já possuem algum conhecimento da língua. As aulas são dinâmicas e adaptadas às necessidades dos alunos.",
+      "underDevelopment": "Esta página está em desenvolvimento. Em breve teremos informações detalhadas sobre o nosso programa de inglês para adultos.",
+      "heroTitle": "A partir de 18 anos",
+      "mainTitle": "Inglês para Adultos",
+      "intro": "Quer aprender inglês para o trabalho, viagens ou objetivos pessoais? O nosso curso para adultos oferece:",
+      "approach": "Desenvolvemos um método que respeita o ritmo de cada aluno, com foco em resultados práticos. As nossas aulas combinam teoria e prática, num ambiente acolhedor onde pode desenvolver as suas competências com confiança.",
+      "activities": {
+        "title": "O Que Oferecemos",
+        "practical": {
+          "title": "Foco prático",
+          "description": "Atividades que unem aprendizagem e aplicação real."
+        },
+        "material": {
+          "title": "Material atualizado",
+          "description": "Recursos que acompanham as exigências atuais."
+        },
+        "levels": {
+          "title": "Opções para iniciantes e avançados",
+          "description": "Evolua ao seu ritmo!"
+        },
+        "networking": {
+          "title": "Networking",
+          "description": "Conheça pessoas com interesses em comum e pratique o idioma em grupo."
+        }
+      },
+      "advantages": {
+        "title": "Vantagens do curso para adultos",
+        "items": [
+          "Desenvolvimento de competências de comunicação profissional.",
+          "Flexibilidade de horários para quem trabalha ou estuda.",
+          "Aprendizagem eficiente, com professores experientes."
+        ]
+      },
+      "cta": {
+        "title": "Pronto para dar o próximo passo na sua carreira?",
+        "description": "Entre em contacto connosco e descubra como o nosso programa para adultos pode transformar a sua vida pessoal e profissional.",
+        "button": "Entre em contacto"
+      },
+      "transformativeExperience": "✨ Experiência Transformadora",
+      "noCommitment": "Sem compromisso",
+      "response24h": "Resposta em 24h"
     }
   }
 }
