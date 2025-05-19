@@ -8,13 +8,13 @@
   "theme_color": "#007bea",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icon_192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icon_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -34,7 +34,7 @@
       "url": "/pt",
       "icons": [
         {
-          "src": "/icons/shortcut-home.png",
+          "src": "/icon_96.png",
           "sizes": "96x96"
         }
       ]
@@ -46,10 +46,10 @@
       "url": "/pt/contact",
       "icons": [
         {
-          "src": "/icons/shortcut-contact.png",
+          "src": "/icon_96.png",
           "sizes": "96x96"
         }
       ]
     }
   ]
-} 
+}

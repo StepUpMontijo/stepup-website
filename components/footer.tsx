@@ -150,7 +150,7 @@ export default function Footer() {
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
               <Image
-                src="/images/logo_black.png"
+                src="/logo_black.png"
                 alt="StepUp"
                 width={50}
                 height={50}

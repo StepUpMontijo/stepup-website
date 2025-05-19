@@ -108,7 +108,7 @@ export default function BiginForm({
                 </div>
                 <a class='wform-poweredby-container' target='_blank' href='https://zoho.eu/bigin/?utm_source=biginwebforms&utm_medium=organic&utm_id=product' id='poweredBy${formId}'>
                   <span style='padding-right: 5px;color: #C5D4E5;'>Powered by</span>
-                  <img src='https://bigin.zoho.eu/images/bigin-logo-xs.svg' style='margin-right: 5px;'/>
+                  <img src='https://bigin.zoho.eu/images/bigin-logo-xs.svg' width="13" height="14" alt="Bigin Logo" style='margin-right: 5px;'/>
                   <span>Bigin</span>
                 </a>
               </form>

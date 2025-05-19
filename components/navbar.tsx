@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
             <Image
-              src="/images/logo_black.png"
+              src="/logo_black.png"
               alt="Step Up Idiomas"
               width={150}
               height={40}
