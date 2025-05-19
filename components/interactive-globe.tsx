@@ -160,6 +160,7 @@ function Globe() {
   const rotationSpeed = 0.0005;
   const [dragging, setDragging] = useState(false);
   const [scale, setScale] = useState(0);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const [momentum, setMomentum] = useState({ x: 0, y: 0 });
   const previousMousePosition = useRef({ x: 0, y: 0 });
@@ -173,8 +174,19 @@ function Globe() {
       texture.minFilter = THREE.LinearFilter;
       texture.generateMipmaps = false;
       texture.anisotropy = 1;
+      // Reduce quality on mobile devices
+      if (isMobile) {
+        texture.minFilter = THREE.NearestFilter;
+        texture.magFilter = THREE.NearestFilter;
+      }
     }
   );
+
+  // Optimize the sphere arguments for mobile devices
+  const sphereArgs = useMemo(() => {
+    const segments = isMobile ? 16 : 32;
+    return [1, segments, segments] as [number, number, number];
+  }, [isMobile]);
 
   // Entry animation effect
   useEffect(() => {
@@ -184,8 +196,6 @@ function Globe() {
 
     return () => clearTimeout(timeout);
   }, []);
-
-  const sphereArgs = useMemo(() => [1, 32, 32] as [number, number, number], []);
 
   useFrame((state) => {
     if (!meshRef.current) return;
@@ -592,14 +602,15 @@ export default function InteractiveGlobe() {
       <div className="absolute inset-0 pointer-events-none">
         <Canvas
           camera={{ position: [0, 0, 4], fov: 55 }}
-          dpr={1}
-          frameloop="always"
+          dpr={Math.min(2, window.devicePixelRatio)}
+          frameloop={prefersReducedMotion ? "demand" : "always"}
           gl={{
             antialias: false,
-            powerPreference: "low-power",
+            powerPreference: "high-performance",
             depth: true,
             stencil: false,
             alpha: true,
+            preserveDrawingBuffer: false
           }}
           performance={{ min: 0.5 }}
           className="pointer-events-none"

@@ -19,8 +19,24 @@ const HandwrittenUnderline: React.FC<HandwrittenUnderlineProps> = ({
   color = "#2b085c", // Default orange color
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-100px",
+    amount: 0.3 // Minimum amount needed to trigger
+  });
   const controls = useAnimation();
+
+  // Optimize animation using will-change
+  useEffect(() => {
+    if (ref.current) {
+      const element = ref.current as HTMLElement;
+      element.style.willChange = 'opacity, transform';
+      
+      return () => {
+        element.style.willChange = 'auto';
+      };
+    }
+  }, []);
 
   // Find the position of the highlighted text
   const parts = text.split(highlightText);
@@ -34,13 +50,17 @@ const HandwrittenUnderline: React.FC<HandwrittenUnderlineProps> = ({
   }, [isInView, controls]);
 
   return (
-    <span ref={ref} className={`relative inline-block ${className}`}>
+    <span ref={ref} className={`relative inline-block ${className} transform-gpu`}>
       {beforeText}
       <span className="relative">
         {highlightText}
         <motion.svg
           className="absolute left-0 w-full pointer-events-none"
-          style={{ bottom: "-5px", height: "15px" }}
+          style={{ 
+            bottom: "-5px", 
+            height: "15px",
+            willChange: "opacity, transform"
+          }}
           viewBox="0 0 100 15"
           initial="hidden"
           animate={controls}

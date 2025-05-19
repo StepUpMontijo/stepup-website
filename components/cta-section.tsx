@@ -27,35 +27,36 @@ export default function CTASection({
         className="relative bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100"
       >
         {/* Background Image - Mobile Only */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0 lg:hidden"
-          animate={{ 
+          animate={{
             rotate: [0, -5, 0],
             scale: [1, 1.05, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             rotate: {
               duration: 8,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             },
             scale: {
               duration: 4,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             },
             opacity: {
               duration: 4,
               repeat: Infinity,
-              ease: "easeInOut"
-            }
+              ease: "easeInOut",
+            },
           }}
         >
           <Image
             src="/images/hero/shape-3.webp"
             alt="Decorative shapes"
             fill
+            sizes="100vw"
             className="object-cover scale-[1.3]"
             priority
           />
@@ -67,27 +68,27 @@ export default function CTASection({
             <div className="absolute inset-0">
               <motion.div
                 className="absolute inset-0"
-                animate={{ 
+                animate={{
                   rotate: [0, -5, 0],
                   scale: [1, 1.05, 1],
-                  opacity: [0.9, 1, 0.9]
+                  opacity: [0.9, 1, 0.9],
                 }}
                 transition={{
                   rotate: {
                     duration: 8,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   },
                   scale: {
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   },
                   opacity: {
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
-                  }
+                    ease: "easeInOut",
+                  },
                 }}
               >
                 <Image
@@ -96,6 +97,7 @@ export default function CTASection({
                   fill
                   className="object-cover scale-[1.3]"
                   priority
+                  sizes="100vw"
                 />
               </motion.div>
             </div>

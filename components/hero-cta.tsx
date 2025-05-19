@@ -51,6 +51,7 @@ export default function HeroCta() {
               fill
               className="object-cover scale-[1.3]"
               priority
+              sizes="100vw"
             />
           </motion.div>
 
@@ -86,6 +87,7 @@ export default function HeroCta() {
                 alt="Decorative shapes"
                 fill
                 className="object-cover scale-[1.3]"
+                sizes="100vw"
                 priority
               />
             </motion.div>

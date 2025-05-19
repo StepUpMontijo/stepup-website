@@ -8,6 +8,13 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   productionBrowserSourceMaps: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizePackageImports: ['@headlessui/react', 'framer-motion', 'lucide-react', '@react-three/fiber', '@react-three/drei'],
+    webVitalsAttribution: ['CLS', 'LCP'],
+  },
 
   images: {
     dangerouslyAllowSVG: true,
@@ -29,6 +36,8 @@ const nextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
   async headers() {
@@ -72,6 +81,10 @@ const nextConfig = {
           {
             key: "Expect-CT",
             value: "max-age=86400, enforce",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

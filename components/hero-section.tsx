@@ -78,6 +78,8 @@ export default function HeroSection() {
             height={300}
             className="w-full h-full object-contain select-none pointer-events-none opacity-100"
             priority
+            loading="eager"
+            sizes="(max-width: 768px) 100vw, 450px"
           />
         </motion.div>
 
@@ -109,6 +111,8 @@ export default function HeroSection() {
             height={300}
             className="w-full h-full object-contain select-none pointer-events-none opacity-100"
             priority
+            loading="eager"
+            sizes="(max-width: 768px) 100vw, 450px"
           />
         </motion.div>
       </div>
