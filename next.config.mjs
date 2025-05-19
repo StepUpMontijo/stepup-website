@@ -33,6 +33,12 @@ const nextConfig = {
         port: "",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "http.cat",
+        port: "",
+        pathname: "/**",
+      },
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
@@ -64,7 +70,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; form-action 'self' https://bigin.zoho.eu; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu; object-src 'none'; report-to default; sandbox allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com https://http.cat; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; form-action 'self' https://bigin.zoho.eu; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu; object-src 'none'; report-to default; sandbox allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox;",
           },
           {
             key: "Report-To",

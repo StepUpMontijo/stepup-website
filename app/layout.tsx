@@ -104,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${publicSans.variable} font-sans`} suppressHydrationWarning>
+    <html className={`${publicSans.variable} font-sans`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

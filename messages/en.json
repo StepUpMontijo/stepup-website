@@ -134,9 +134,9 @@
       "dragToScroll": "Drag to see more",
       "hoverToPause": "Hover to pause",
       "testimonial1": {
-        "text": "StepUp didn't just teach my son English—they made him love learning. His progress has been amazing.",
-        "name": "Marcia",
-        "role": "Parent"
+        "text": "Such a comfortable environment with excellent classes. The teacher is extremely kind and explains everything clearly. Communication with the school is outstanding—always professional and courteous. After just a few months, I already notice a significant improvement in my English. Truly exceptional.",
+        "name": "Kelssy",
+        "role": "Student"
       },
       "testimonial2": {
         "text": "I love the classes at StepUp! They're fun and engaging, with something new to learn every time.",
@@ -149,9 +149,9 @@
         "role": "Student"
       },
       "testimonial4": {
-        "text": "Such a comfortable environment with excellent classes. The teacher is extremely kind and explains everything clearly. Communication with the school is outstanding—always professional and courteous. After just a few months, I already notice a significant improvement in my English. Truly exceptional.",
-        "name": "Kelssy",
-        "role": "Student"
+        "text": "StepUp didn't just teach my son English—they made him love learning. His progress has been amazing.",
+        "name": "Marcia",
+        "role": "Parent"
       },
       "testimonial5": {
         "text": "I've learned so much English at this school. The teachers are incredibly friendly and attentive, which has greatly benefited my professional life.",
@@ -559,5 +559,12 @@
     },
     "cta": "Schedule Free Class",
     "footer": "No commitment. Response within 24h."
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Oops! Looks like you've ventured into digital space. The page you're looking for doesn't exist or has been moved.",
+    "homeButton": "Back to Home",
+    "searchButton": "Search",
+    "helpText": "If you need help, contact us or use the search bar to find what you're looking for."
   }
 }

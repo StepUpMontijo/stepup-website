@@ -42,10 +42,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section
-      className="relative pt-32 pb-8 md:pt-40 md:pb-12 flex items-center justify-center overflow-hidden bg-white"
-      suppressHydrationWarning
-    >
+    <section className="relative pt-32 pb-8 md:pt-40 md:pb-12 flex items-center justify-center overflow-hidden bg-white">
       {/* Background gradient */}
       <div className="absolute inset-0 z-[1]" />
 
@@ -137,7 +134,7 @@ export default function HeroSection() {
                     delay={0.5}
                   />
                 </span>{" "}
-                {locale === "pt" 
+                {locale === "pt"
                   ? "o seu futuro com o inglês"
                   : "your future with English"}
               </h1>

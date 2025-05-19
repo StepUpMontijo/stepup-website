@@ -134,9 +134,9 @@
       "dragToScroll": "Arraste para ver mais",
       "hoverToPause": "Passe o rato para pausar",
       "testimonial1": {
-        "text": "A StepUp não apenas ensinou inglês ao meu filho, mas fê-lo amar a aprendizagem. O desenvolvimento dele tem sido incrível.",
-        "name": "Marcia",
-        "role": "Mãe de aluno"
+        "text": "Lugar bastante confortável, aulas muito boas. Professora extremamente gentil, trata todos os alunos bem e explica muito bem. A comunicação com a escola é ótima, tratam-nos sempre com muita educação. Estou há alguns meses e já sinto a diferença no inglês. Extremamente bom.",
+        "name": "Kelssy",
+        "role": "Aluna"
       },
       "testimonial2": {
         "text": "Adoro as aulas na StepUp! São divertidas e muito envolventes, sempre com algo novo para aprender.",
@@ -149,9 +149,9 @@
         "role": "Aluno"
       },
       "testimonial4": {
-        "text": "Lugar bastante confortável, aulas muito boas. Professora extremamente gentil, trata todos os alunos bem e explica muito bem. A comunicação com a escola é ótima, tratam-nos sempre com muita educação. Estou há alguns meses e já sinto a diferença no inglês. Extremamente bom.",
-        "name": "Kelssy",
-        "role": "Aluna"
+        "text": "A StepUp não apenas ensinou inglês ao meu filho, mas fê-lo amar a aprendizagem. O desenvolvimento dele tem sido incrível.",
+        "name": "Marcia",
+        "role": "Mãe de aluno"
       },
       "testimonial5": {
         "text": "Aprendi bastante inglês nesta escola, os professores são super simpáticos e atenciosos, ajudou-me bastante na minha vida profissional.",
@@ -559,5 +559,12 @@
     },
     "cta": "Marque uma Aula Grátis",
     "footer": "Sem compromisso. Resposta em até 24h."
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "Oops! Parece que te perdeste no espaço digital. A página que procuras não existe ou foi movida.",
+    "homeButton": "Voltar ao Início",
+    "searchButton": "Procurar",
+    "helpText": "Se precisares de ajuda, contacta-nos ou usa a barra de pesquisa para encontrar o que procuras."
   }
 }
