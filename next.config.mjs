@@ -53,10 +53,6 @@ const nextConfig = {
             value: "strict-origin-when-cross-origin",
           },
           {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
-          },
-          {
             key: "Content-Security-Policy",
             value:
               "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; form-action 'self' https://bigin.zoho.eu; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu; object-src 'none'; report-to default; sandbox allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox;",

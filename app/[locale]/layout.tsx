@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Public_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n";
 import StructuredData from "../structured-data";
 import ClientLayout from "./client-layout";
 
 import "../globals.css";
-
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-public-sans",
-  weight: ["300", "400", "500", "600", "700", "800"],
-  fallback: ["system-ui", "sans-serif"],
-});
 
 // Default timezone configuration
 const timeZone = "Europe/Lisbon";
@@ -88,21 +79,15 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html
-      lang={locale}
-      className={`${publicSans.variable} font-sans`}
-      suppressHydrationWarning
-    >
-      <body className="antialiased">
-        <StructuredData locale={locale} />
-        <ClientLayout
-          locale={locale}
-          messages={messages}
-          timeZone={timeZone}
-        >
-          {children}
-        </ClientLayout>
-      </body>
-    </html>
+    <>
+      <StructuredData locale={locale} />
+      <ClientLayout
+        locale={locale}
+        messages={messages}
+        timeZone={timeZone}
+      >
+        {children}
+      </ClientLayout>
+    </>
   );
 }

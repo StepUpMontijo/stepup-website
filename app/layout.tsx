@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Public_Sans } from "next/font/google";
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-public-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  fallback: ["system-ui", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stepupidiomas.pt"),
@@ -91,11 +100,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html suppressHydrationWarning lang="pt">
+    <html className={`${publicSans.variable} font-sans`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -107,9 +116,7 @@ export default function RootLayout({
           content="black-translucent"
         />
       </head>
-      <body className="antialiased" suppressHydrationWarning>
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
