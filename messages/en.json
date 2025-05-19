@@ -4,7 +4,13 @@
     "about": "About Us",
     "courses": "Courses",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cta": "Book a Free Class",
+    "coursesDropdown": {
+      "children": "English for Children",
+      "teenagers": "English for Teenagers",
+      "adults": "English for Adults"
+    }
   },
   "CourseTypes": {
     "children": "Children",
@@ -13,9 +19,29 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Learn English with StepUp!",
-      "subtitle": "Experience the methodology that has transformed hundreds of students' lives across Portugal",
-      "cta": "Book a free trial class"
+      "title": "Unlock Your Future with English",
+      "subtitle": "Experience a fresh approach to learning English with expert teachers and proven methods",
+      "cta": "Book a Free Class",
+      "secondary_cta": "Learn More",
+      "stats": {
+        "satisfaction": "Student satisfaction rate",
+        "years": "Years of expertise",
+        "students": "Successful graduates"
+      },
+      "floating": {
+        "certified": "Certified",
+        "teachers": "Teachers",
+        "flexible": "Flexible",
+        "schedule": "Schedule"
+      }
+    },
+    "heroCta": {
+      "title": "Begin Your English Journey Today!",
+      "subtitle": "Try a free class and see how we can help you achieve the fluency you've been dreaming of.",
+      "feature1": "✨ First class on us",
+      "feature2": "⏰ Flexible scheduling",
+      "feature3": "✓ No strings attached",
+      "cta": "Book Your Free Class"
     },
     "form": {
       "name": "Name",
@@ -25,25 +51,25 @@
     },
     "about": {
       "title": "About StepUp",
-      "description": "An innovative English school in Montijo combining experience with personalized courses for all ages and proficiency levels.",
+      "description": "A cutting-edge English school in Montijo that combines expertise with tailored courses for all ages and skill levels.",
       "cta": "Learn More"
     },
     "gallery": {
       "title": "Our Facilities",
-      "subtitle": "Explore our welcoming and modern environment where students learn and grow.",
+      "subtitle": "Take a tour of our modern, welcoming space where students thrive and grow.",
       "room": {
         "title": "Classroom",
-        "description": "A comfortable space where students study, interact and enjoy our school's welcoming atmosphere.",
+        "description": "A comfortable learning space where students study, interact, and enjoy our school's warm atmosphere.",
         "alt": "StepUp classroom"
       },
       "exterior": {
         "title": "School Exterior",
-        "description": "Our school is centrally located and easily accessible in Montijo.",
+        "description": "Our school is conveniently located in the heart of Montijo.",
         "alt": "Exterior view of StepUp school"
       },
       "studentActivity": {
         "title": "Interactive Activities",
-        "description": "Our students engage in dynamic activities that make learning English more effective, enjoyable and engaging.",
+        "description": "Our students engage in dynamic activities that make learning English both effective and enjoyable.",
         "alt": "Student participating in a hands-on activity",
         "alt2": "Students collaborating on an interactive group project"
       },
@@ -52,24 +78,24 @@
       "clickToEnlarge": "Click to enlarge"
     },
     "features": {
-      "title": "Why choose StepUp?",
-      "subtitle": "StepUp combines innovation with experience. Your success is our greatest achievement.",
+      "title": "Why Choose StepUp?",
+      "subtitle": "StepUp combines innovation with expertise. Your success is our top priority.",
       "cards": {
         "welcoming": {
           "title": "Supportive Environment",
-          "description": "We foster an atmosphere of support, patience and continuous encouragement. We celebrate every achievement because we know that every step matters."
+          "description": "We create an atmosphere of encouragement and patience. We celebrate every milestone because we know each step counts."
         },
         "learning": {
           "title": "Inclusive Learning",
-          "description": "We're committed to making English accessible to everyone, adults and children alike. We believe anyone can learn, even those who thought it wasn't possible."
+          "description": "We're dedicated to making English accessible to everyone. We believe anyone can learn, even those who thought it wasn't possible."
         },
         "experience": {
           "title": "Personalized Approach",
-          "description": "Our courses are tailored to different ages and proficiency levels. Our experienced teachers provide individual attention to each student."
+          "description": "Our courses are tailored to different ages and skill levels. Our experienced teachers provide individual attention to each student."
         },
         "location": {
-          "title": "Convenient Location",
-          "description": "Located in Montijo, our modern and comfortable classrooms are designed to create the optimal learning environment."
+          "title": "Prime Location",
+          "description": "Located in Montijo, our modern and comfortable classrooms are designed to create the perfect learning environment."
         },
         "services": {
           "title": "Additional Services",
@@ -83,12 +109,12 @@
       "learnMore": "Learn More",
       "children": {
         "title": "English for Children",
-        "description": "Our children's program introduces English through fun and interactive activities, respecting each child's individual learning pace.",
+        "description": "Our children's program introduces English through fun, interactive activities, respecting each child's unique learning pace.",
         "cta": "Learn More"
       },
       "teenagers": {
         "title": "English for Teenagers",
-        "description": "Our teenage courses progressively develop language skills with a focus on communication and preparation for advanced proficiency.",
+        "description": "Our teenage courses build language skills progressively, focusing on communication and preparing for advanced proficiency.",
         "cta": "Learn More"
       },
       "adults": {
@@ -99,16 +125,16 @@
     },
     "activities": {
       "title": "Activities",
-      "description": "In addition to our regular English courses, StepUp offers complementary services that enhance the learning experience.",
+      "description": "Beyond our regular English courses, StepUp offers complementary services that enhance the learning experience.",
       "cta": "Learn More"
     },
     "testimonials": {
-      "title": "Our Students Love Us!",
-      "subtitle": "See what students and parents say about their StepUp experience.",
+      "title": "What Our Students Say",
+      "subtitle": "Hear from our students and parents about their StepUp experience.",
       "dragToScroll": "Drag to see more",
       "hoverToPause": "Hover to pause",
       "testimonial1": {
-        "text": "StepUp didn't just teach my son English—they made him love learning. His progress has been incredible.",
+        "text": "StepUp didn't just teach my son English—they made him love learning. His progress has been amazing.",
         "name": "Marcia",
         "role": "Parent"
       },
@@ -118,12 +144,12 @@
         "role": "Student"
       },
       "testimonial3": {
-        "text": "The school has excellent facilities, patient and caring teachers who are incredibly supportive and friendly! The curriculum is wonderfully organized. I feel completely comfortable learning English here.",
+        "text": "The school has excellent facilities and caring teachers who are incredibly supportive! The curriculum is well-organized. I feel completely comfortable learning English here.",
         "name": "Anonymous",
         "role": "Student"
       },
       "testimonial4": {
-        "text": "Such a comfortable environment with excellent classes. The teacher is extremely kind, treats all students well and explains everything clearly. Communication with the school is outstanding—always professional and courteous. After just a few months, I already notice a significant improvement in my English. Truly exceptional.",
+        "text": "Such a comfortable environment with excellent classes. The teacher is extremely kind and explains everything clearly. Communication with the school is outstanding—always professional and courteous. After just a few months, I already notice a significant improvement in my English. Truly exceptional.",
         "name": "Kelssy",
         "role": "Student"
       },
@@ -159,14 +185,14 @@
       }
     },
     "contact": {
-      "title": "For More Information",
+      "title": "Get in Touch",
       "address": "Praça da República, 52, Montijo - Portugal",
       "email": "admin@stepupidiomas.pt",
       "phone": "+351 923 076 858"
     },
     "stats": {
-      "students": "Satisfied Students",
-      "teachers": "Qualified Teachers",
+      "students": "Happy Students",
+      "teachers": "Expert Teachers",
       "experience": "Years of Experience"
     },
     "accessibility": {
@@ -522,5 +548,16 @@
       "noCommitment": "No commitment",
       "response24h": "Response within 24h"
     }
+  },
+  "LeadCapture": {
+    "title": "Transform Your English",
+    "subtitle": "Discover how StepUp can help you achieve the fluency you've always wanted. Schedule a free trial class and start your journey today!",
+    "features": {
+      "free": "First class completely free",
+      "schedule": "Flexible schedules for your routine",
+      "methodology": "Proven and effective methodology"
+    },
+    "cta": "Schedule Free Class",
+    "footer": "No commitment. Response within 24h."
   }
 }

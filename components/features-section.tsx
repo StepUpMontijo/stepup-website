@@ -1,92 +1,79 @@
 "use client";
 
-import { Heart, Sparkles, Star, MapPin, BookOpen, Coffee } from "lucide-react";
 import { useTranslations } from "next-intl";
-import HandwrittenUnderline from "@/components/handwritten-underline";
-import { useAnimatedMount } from "@/hooks/useIsMounted";
-
-// Definition of icons for each card
-const featureIcons = {
-  welcoming: Heart,
-  learning: Sparkles,
-  experience: Star,
-  location: MapPin,
-  methodology: BookOpen,
-  services: Coffee,
-};
-
-// List of keys for the cards
-const featureKeys = [
-  "welcoming",
-  "learning",
-  "experience",
-  "location",
-  "services",
-];
+import { motion } from "framer-motion";
+import { Globe2, Clock, Users, BookOpen, Monitor } from "lucide-react";
 
 export default function FeaturesSection() {
-  // Get translations
   const t = useTranslations("HomePage.features");
 
-  // Use the custom hook for animations
-  const { isMounted, isVisible } = useAnimatedMount();
-
-  // Don't render anything during SSR
-  if (!isMounted) {
-    return null;
-  }
+  const features = [
+    {
+      icon: Globe2,
+      title: t("cards.welcoming.title"),
+      description: t("cards.welcoming.description"),
+    },
+    {
+      icon: Clock,
+      title: t("cards.learning.title"),
+      description: t("cards.learning.description"),
+    },
+    {
+      icon: Users,
+      title: t("cards.experience.title"),
+      description: t("cards.experience.description"),
+    },
+    {
+      icon: BookOpen,
+      title: t("cards.location.title"),
+      description: t("cards.location.description"),
+    },
+    {
+      icon: Monitor,
+      title: t("cards.services.title"),
+      description: t("cards.services.description"),
+    },
+  ];
 
   return (
-    <section className="py-20 relative overflow-hidden bg-white">
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-50 via-white to-blue-50" />
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div
-          className="text-center max-w-3xl mx-auto mb-16"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.5s ease, transform 0.5s ease",
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">
-            <HandwrittenUnderline
-              text={t("title")}
-              highlightText={t("title")}
-              delay={0.8}
-              color="#3b82f6"
-            />
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {t("title")}
           </h2>
-          <p className="text-xl text-gray-600">{t("subtitle")}</p>
-        </div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t("subtitle")}
+          </p>
+        </motion.div>
 
-        <div
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
-          }}
-        >
-          <div className="flex flex-wrap justify-center gap-8">
-            {featureKeys.map((key) => {
-              const Icon = featureIcons[key as keyof typeof featureIcons];
-              return (
-                <div
-                  key={key}
-                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-blue-200 group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] max-w-md"
-                >
-                  <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                    {t(`cards.${key}.title`)}
-                  </h3>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                    {t(`cards.${key}.description`)}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+        <div className="flex flex-wrap justify-center gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] max-w-sm"
+            >
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                <feature.icon className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

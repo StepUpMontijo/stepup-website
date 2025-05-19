@@ -1,13 +1,10 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 import CourseCard from "./course-card";
-import HandwrittenUnderline from "./handwritten-underline";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-type PageProps = {
-  locale: string;
-};
-
-export default async function CoursesSection({ locale }: PageProps) {
-  const t = await getTranslations({ locale, namespace: "HomePage.courses" });
+export default function CoursesSection() {
+  const t = useTranslations("HomePage.courses");
 
   // Course data
   const courses = [
@@ -28,50 +25,77 @@ export default async function CoursesSection({ locale }: PageProps) {
     },
   ];
 
-  return (
-    <section className="py-20 bg-slate-50/50 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent"></div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-      {/* Decorative circles */}
-      <div className="absolute -left-16 top-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
-      <div className="absolute -right-20 bottom-1/4 w-80 h-80 rounded-full bg-secondary/5 blur-3xl"></div>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  return (
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-blue-50">
+      {/* Background decoration */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 relative inline-block">
-            <HandwrittenUnderline
-              text={t("title")}
-              highlightText={t("title")}
-              delay={0.5}
-              color="#2b085c"
-            />
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+          >
+            {t("title")}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-600"
+          >
             {t("subtitle")}
-          </p>
+          </motion.p>
         </div>
 
         {/* Courses grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => {
-            return (
-              <div
-                key={course.key}
-                className={`animate-fade-up animate-delay-${index + 1}00`}
-              >
-                <CourseCard
-                  title={t(`${course.key}.title`)}
-                  description={t(`${course.key}.description`)}
-                  image={course.image}
-                  href={course.href}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {courses.map((course) => (
+            <motion.div key={course.key} variants={itemVariants}>
+              <CourseCard
+                title={t(`${course.key}.title`)}
+                description={t(`${course.key}.description`)}
+                image={course.image}
+                href={course.href}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

@@ -4,7 +4,13 @@
     "about": "Sobre Nós",
     "courses": "Cursos",
     "services": "Serviços",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "cta": "Marque uma Aula Grátis",
+    "coursesDropdown": {
+      "children": "Inglês para Crianças",
+      "teenagers": "Inglês para Adolescentes",
+      "adults": "Inglês para Adultos"
+    }
   },
   "CourseTypes": {
     "children": "Crianças",
@@ -13,9 +19,29 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Aprenda inglês na StepUp!",
-      "subtitle": "Descubra a metodologia que já transformou a vida de centenas de alunos em Portugal",
-      "cta": "Marque uma aula experimental"
+      "title": "Transforme o seu futuro com o inglês",
+      "subtitle": "Descubra uma nova forma de aprender inglês, com professores qualificados e metodologia comprovada",
+      "cta": "Marque uma Aula Grátis",
+      "secondary_cta": "Saiba Mais",
+      "stats": {
+        "satisfaction": "Satisfação dos alunos",
+        "years": "Anos de experiência",
+        "students": "Alunos formados"
+      },
+      "floating": {
+        "certified": "Professores",
+        "teachers": "Certificados",
+        "flexible": "Horários",
+        "schedule": "Flexíveis"
+      }
+    },
+    "heroCta": {
+      "title": "Comece a sua jornada no inglês hoje!",
+      "subtitle": "Marque uma aula experimental gratuita e descubra como podemos ajudá-lo a alcançar a fluência que sempre desejou.",
+      "feature1": "✨ Primeira aula grátis",
+      "feature2": "⏰ Horários flexíveis",
+      "feature3": "✓ Sem compromisso",
+      "cta": "Marque a sua Aula Grátis"
     },
     "form": {
       "name": "Nome",
@@ -37,7 +63,7 @@
         "alt": "Sala de aula da StepUp"
       },
       "exterior": {
-        "title": "Fachada da Escola",
+        "title": "Onde estamos",
         "description": "A nossa escola está localizada numa zona central e de fácil acesso no Montijo.",
         "alt": "Fachada exterior da escola StepUp"
       },
@@ -522,5 +548,16 @@
       "noCommitment": "Sem compromisso",
       "response24h": "Resposta em 24h"
     }
+  },
+  "LeadCapture": {
+    "title": "Transforme o seu Inglês",
+    "subtitle": "Descubra como a StepUp pode ajudá-lo a alcançar a fluência que sempre desejou. Marque uma aula experimental gratuita e comece a sua jornada hoje!",
+    "features": {
+      "free": "Primeira aula totalmente grátis",
+      "schedule": "Horários flexíveis para a sua rotina",
+      "methodology": "Metodologia comprovada e eficaz"
+    },
+    "cta": "Marque uma Aula Grátis",
+    "footer": "Sem compromisso. Resposta em até 24h."
   }
 }

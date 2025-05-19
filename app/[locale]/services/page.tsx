@@ -13,7 +13,6 @@ import {
   LucideIcon,
   Languages,
 } from "lucide-react";
-import GridPattern from "@/components/grid-pattern";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -134,9 +133,6 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <div className="relative min-h-screen">
-      {/* Background with grid pattern and morphing effect */}
-      <GridPattern />
-
       <div className="container mx-auto px-4 relative pt-32 pb-20">
         {/* Page header with animation */}
         <div className="text-center mb-20 max-w-3xl mx-auto">

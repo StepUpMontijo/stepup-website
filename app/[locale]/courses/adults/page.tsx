@@ -1,4 +1,3 @@
-import GridPattern from "@/components/grid-pattern";
 import HandwrittenUnderline from "@/components/handwritten-underline";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -37,34 +36,33 @@ export default async function AdultsCoursePage({ params }: PageProps) {
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section with Modern Design */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-b from-white via-green-50 to-teal-50">
-        <GridPattern />
-
+      <section className="relative pt-32 pb-16 bg-gradient-to-b from-white via-green-50/50 to-teal-50/50">
         {/* Floating Elements */}
-        <div className="absolute top-40 right-10 w-16 h-16 animate-bounce-slow hidden md:block">
+        <div className="absolute top-40 right-10 w-16 h-16 animate-bounce-slow opacity-60 hover:opacity-100 transition-opacity duration-300 hidden md:block">
           <Image
             src="/images/icons/pencil.svg"
             alt="Pencil icon"
             width={64}
             height={64}
-            className="transform rotate-12"
+            className="transform rotate-12 drop-shadow-lg"
           />
         </div>
-        <div className="absolute top-60 left-16 w-20 h-20 animate-float-slow hidden md:block">
+        <div className="absolute top-60 left-16 w-20 h-20 animate-float-slow opacity-60 hover:opacity-100 transition-opacity duration-300 hidden md:block">
           <Image
             src="/images/icons/star.svg"
             alt="Star icon"
             width={80}
             height={80}
+            className="drop-shadow-lg"
           />
         </div>
 
         <div className="container mx-auto px-4 relative">
           <div className="text-center">
-            <span className="inline-block py-1 px-4 rounded-full bg-green-100 text-primary text-sm font-medium mb-4">
+            <span className="inline-block py-1.5 px-6 rounded-full bg-green-100/80 text-primary text-sm font-medium mb-6 backdrop-blur-sm border border-green-200/30 shadow-sm">
               {t("heroTitle")}
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-zinc-800 bg-gradient-to-r from-primary to-secondary">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-clip-text text-black bg-gradient-to-r from-primary via-green-600 to-secondary">
               <HandwrittenUnderline
                 text={t("mainTitle")}
                 highlightText={t("mainTitle")}
@@ -72,23 +70,23 @@ export default async function AdultsCoursePage({ params }: PageProps) {
                 color="#2b085c"
               />
             </h1>
-            <p className="text-xl text-slate-700 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-slate-700/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               {t("intro")}
             </p>
           </div>
 
           {/* Hero Image with Adults and English elements */}
-          <div className="relative w-full max-w-6xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-6xl mx-auto h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
             <Image
               src="/images/courses/adults.webp"
               alt="Adults learning English"
               fill
-              className="object-cover"
+              className="object-cover transform group-hover:scale-105 transition-transform duration-700"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-              <div className="p-8 text-white">
-                <p className="text-2xl md:text-3xl font-bold mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end">
+              <div className="p-8 md:p-12 w-full">
+                <p className="text-2xl md:text-3xl font-bold mb-2 text-white group-hover:translate-y-[-4px] transition-all duration-300">
                   {t("description")}
                 </p>
               </div>
@@ -98,17 +96,17 @@ export default async function AdultsCoursePage({ params }: PageProps) {
       </section>
 
       {/* Our Pedagogical Approach */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="prose prose-lg prose-purple mx-auto">
-              <p className="text-xl text-center text-slate-700 mb-8">
+              <p className="text-xl text-center text-slate-700/90 mb-12 leading-relaxed">
                 {t("approach")}
               </p>
             </div>
 
             {/* Activity Cards */}
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black bg-clip-text bg-gradient-to-r from-primary to-secondary">
               <HandwrittenUnderline
                 text={t("activities.title")}
                 highlightText={t("activities.title")}
@@ -117,55 +115,55 @@ export default async function AdultsCoursePage({ params }: PageProps) {
               />
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-full">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-full">
               {/* Practical Focus */}
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+              <div className="group bg-gradient-to-br from-green-50/50 to-teal-50/50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center border border-green-100/20 backdrop-blur-sm">
+                <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 text-primary rounded-xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <Briefcase className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {t("activities.practical.title")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600/90">
                   {t("activities.practical.description")}
                 </p>
               </div>
 
               {/* Updated Materials */}
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+              <div className="group bg-gradient-to-br from-green-50/50 to-teal-50/50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center border border-green-100/20 backdrop-blur-sm">
+                <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 text-primary rounded-xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <FileText className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {t("activities.material.title")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600/90">
                   {t("activities.material.description")}
                 </p>
               </div>
 
               {/* Levels Options */}
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+              <div className="group bg-gradient-to-br from-green-50/50 to-teal-50/50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center border border-green-100/20 backdrop-blur-sm">
+                <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 text-primary rounded-xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <BookOpen className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {t("activities.levels.title")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600/90">
                   {t("activities.levels.description")}
                 </p>
               </div>
 
               {/* Networking */}
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
+              <div className="group bg-gradient-to-br from-green-50/50 to-teal-50/50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center border border-green-100/20 backdrop-blur-sm">
+                <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 text-primary rounded-xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <Users className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {t("activities.networking.title")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600/90">
                   {t("activities.networking.description")}
                 </p>
               </div>
@@ -175,9 +173,9 @@ export default async function AdultsCoursePage({ params }: PageProps) {
       </section>
 
       {/* Advantages */}
-      <section className="py-16 bg-gradient-to-b from-green-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-green-50/30 to-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black bg-clip-text bg-gradient-to-r from-primary to-secondary">
             <HandwrittenUnderline
               text={t("advantages.title")}
               highlightText={t("advantages.title")}
@@ -186,16 +184,16 @@ export default async function AdultsCoursePage({ params }: PageProps) {
             />
           </h2>
 
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg">
+          <div className="max-w-4xl mx-auto bg-white/80 rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-sm border border-green-100/20">
             <ul className="space-y-6">
               {(t.raw("advantages.items") as string[]).map(
                 (item: string, index: number) => (
-                  <li key={index} className="flex gap-4 items-start">
-                    <div className="bg-primary/10 p-3 rounded-full shrink-0">
+                  <li key={index} className="flex gap-4 items-start group">
+                    <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-3 rounded-xl shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="text-lg text-slate-700">{item}</p>
+                      <p className="text-lg text-slate-700/90 group-hover:text-slate-900 transition-colors duration-300">{item}</p>
                     </div>
                   </li>
                 )

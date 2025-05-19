@@ -1,24 +1,28 @@
 import type { Metadata } from "next";
-import { Toaster } from "sonner";
-import { Inter } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { Public_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { locales } from "@/i18n";
 import StructuredData from "../structured-data";
+import ClientLayout from "./client-layout";
 
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-public-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  fallback: ["system-ui", "sans-serif"],
+});
+
+// Default timezone configuration
+const timeZone = "Europe/Lisbon";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  // Define the titles and descriptions based on the locale
   const { locale } = await Promise.resolve(params);
 
   // Specific metadata by language
@@ -64,7 +68,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return [{ locale: "en" }, { locale: "pt" }];
 }
 
 export default async function LocaleLayout({
@@ -74,30 +78,31 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { locale } = await Promise.resolve(params);
-  if (!locales.includes(locale)) return notFound();
-  await setRequestLocale(locale);
+  const { locale } = await params;
 
-  // Load the messages for the current locale
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
-  } catch (error) {
-    console.error(`Error loading messages for locale ${locale}:`, error);
-    messages = {};
+  } catch {
+    notFound();
   }
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <div
-        className={`flex flex-col min-h-screen bg-white text-gray-900 ${inter.className}`}
-      >
+    <html
+      lang={locale}
+      className={`${publicSans.variable} font-sans`}
+      suppressHydrationWarning
+    >
+      <body className="antialiased">
         <StructuredData locale={locale} />
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <Toaster closeButton richColors />
-      </div>
-    </NextIntlClientProvider>
+        <ClientLayout
+          locale={locale}
+          messages={messages}
+          timeZone={timeZone}
+        >
+          {children}
+        </ClientLayout>
+      </body>
+    </html>
   );
 }

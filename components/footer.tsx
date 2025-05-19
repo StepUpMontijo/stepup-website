@@ -140,29 +140,32 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-white to-blue-50 border-t border-gray-200">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="relative bg-gradient-to-b from-white to-blue-50/30">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and description */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="flex items-center space-x-3">
               <Image
-                src="/logo.png"
+                src="/images/logo_black.png"
                 alt="StepUp"
                 width={50}
                 height={50}
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-gray-600 text-sm max-w-xs leading-relaxed">
               {t("HomePage.about.description")}
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-3 pt-2">
               <a
                 href="https://www.facebook.com/StepUpMontijo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-full transition-colors"
+                className="bg-white hover:bg-blue-50 text-blue-600 p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border border-blue-100/50"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -171,7 +174,7 @@ export default function Footer() {
                 href="https://www.instagram.com/stepup_linguas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-full transition-colors"
+                className="bg-white hover:bg-blue-50 text-blue-600 p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border border-blue-100/50"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -180,7 +183,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@StepUpLanguageCentre"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-full transition-colors"
+                className="bg-white hover:bg-blue-50 text-blue-600 p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border border-blue-100/50"
                 aria-label="Youtube"
               >
                 <Youtube className="h-5 w-5" />
@@ -189,7 +192,7 @@ export default function Footer() {
                 href="https://wa.me/351923076858"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-full transition-colors"
+                className="bg-white hover:bg-blue-50 text-blue-600 p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border border-blue-100/50"
                 aria-label="WhatsApp"
               >
                 <MessageSquare className="h-5 w-5" />
@@ -199,62 +202,62 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-2 flex items-center">
+            <h3 className="text-lg font-semibold mb-8 text-gray-900 flex items-center">
               <Home className="h-5 w-5 mr-2 text-blue-600" />
               {t("NavBar.home")}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("NavBar.about")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/courses/children"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("CourseTypes.children")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/courses/teenagers"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("CourseTypes.teenagers")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/courses/adults"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("CourseTypes.adults")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("NavBar.services")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                  className="text-gray-600 hover:text-blue-600 transition-colors flex items-center group"
                 >
-                  <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="inline-block w-1.5 h-1.5 bg-blue-500/50 group-hover:bg-blue-500 rounded-full mr-2 transition-colors"></span>
                   {t("NavBar.contact")}
                 </Link>
               </li>
@@ -263,31 +266,31 @@ export default function Footer() {
 
           {/* Contacts */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-2 flex items-center">
+            <h3 className="text-lg font-semibold mb-8 text-gray-900 flex items-center">
               <Info className="h-5 w-5 mr-2 text-blue-600" />
               {t("NavBar.contact")}
             </h3>
-            <ul className="space-y-5">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-600">
+            <ul className="space-y-6">
+              <li className="flex items-start space-x-3 group">
+                <MapPin className="h-5 w-5 text-blue-600/75 group-hover:text-blue-600 mt-0.5 flex-shrink-0 transition-colors" />
+                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">
                   {t("HomePage.contact.address")}
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
+              <li className="flex items-center space-x-3 group">
+                <Mail className="h-5 w-5 text-blue-600/75 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
                 <a
                   href="mailto:admin@stepupidiomas.pt"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-gray-600 group-hover:text-gray-900 transition-colors"
                 >
                   {t("HomePage.contact.email")}
                 </a>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
+              <li className="flex items-center space-x-3 group">
+                <Phone className="h-5 w-5 text-blue-600/75 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
                 <a
                   href="tel:+351923076858"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-gray-600 group-hover:text-gray-900 transition-colors"
                 >
                   {t("HomePage.contact.phone")}
                 </a>
@@ -297,27 +300,27 @@ export default function Footer() {
 
           {/* Schedule */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-2 flex items-center">
+            <h3 className="text-lg font-semibold mb-8 text-gray-900 flex items-center">
               <Clock className="h-5 w-5 mr-2 text-blue-600" />
               {t("Footer.schedule.title")}
             </h3>
 
             {/* Current status: Open/Closed */}
-            <div className="mb-4 flex items-center">
+            <div className="mb-6">
               <div
                 className={`
-                flex items-center justify-center px-4 py-2 rounded-full 
+                inline-flex items-center justify-center px-4 py-2 rounded-xl
                 ${
                   isOpen
-                    ? "bg-green-100 border border-green-200 text-green-700"
-                    : "bg-red-50 border border-red-100 text-red-500"
+                    ? "bg-green-50 text-green-700 border border-green-100"
+                    : "bg-red-50 text-red-500 border border-red-100"
                 }
                 shadow-sm
               `}
               >
                 <div
                   className={`
-                  w-2.5 h-2.5 rounded-full mr-2
+                  w-2 h-2 rounded-full mr-2
                   ${isOpen ? "bg-green-500 animate-pulse" : "bg-red-400"}
                 `}
                 ></div>
@@ -339,7 +342,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-blue-100/20">
               <div className="grid grid-cols-2 gap-x-4 gap-y-0">
                 {/* First column: Monday to Wednesday */}
                 <div>
@@ -348,13 +351,13 @@ export default function Footer() {
                       key={day}
                       className={`mb-3 ${
                         isToday(day)
-                          ? "bg-blue-50 border-l-4 border-blue-500 pl-2 rounded-r-lg shadow-sm"
+                          ? "bg-blue-50/50 border-l-4 border-blue-500 pl-2 rounded-r-lg shadow-sm"
                           : ""
                       } transition-all duration-200`}
                     >
                       <div className="flex flex-col py-1.5">
                         <div className="flex items-center">
-                          <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-500/75 mr-2"></div>
                           <span
                             className={`${
                               isToday(day)
@@ -405,13 +408,13 @@ export default function Footer() {
                       key={day}
                       className={`mb-3 ${
                         isToday(day)
-                          ? "bg-blue-50 border-l-4 border-blue-500 pl-2 rounded-r-lg shadow-sm"
+                          ? "bg-blue-50/50 border-l-4 border-blue-500 pl-2 rounded-r-lg shadow-sm"
                           : ""
                       } transition-all duration-200`}
                     >
                       <div className="flex flex-col py-1.5">
                         <div className="flex items-center">
-                          <div className="w-2 h-2 rounded-full bg-red-400 mr-2"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-red-400/75 mr-2"></div>
                           <span
                             className={`${
                               isToday(day)
@@ -436,32 +439,42 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-200 py-6 bg-white bg-opacity-70">
-        <div className="container mx-auto px-4 flex flex-col items-center">
-          <p className="text-sm text-gray-600 flex items-center">
-            <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-            {t("Footer.copyright").replace(
-              "[year]",
-              new Date().getFullYear().toString()
-            )}
-          </p>
+      <div className="relative border-t border-blue-100/50 py-8 bg-gradient-to-r from-white/40 via-blue-50/30 to-white/40 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse"></div>
+              <p className="text-sm text-gray-700 font-medium">
+                {t("Footer.copyright").replace(
+                  "[year]",
+                  new Date().getFullYear().toString()
+                )}
+              </p>
+            </div>
 
-          {/* ---------------------------------------------------------------- */}
-          {/* PLEASE, DON NOT REMOVE THIS COPYRIGHT */}
-          {/* Developed by Rafael Soares (https://github.com/rsoaresdev) */}
-          {/* ---------------------------------------------------------------- */}
+            {/* ---------------------------------------------------------------- */}
+            {/* PLEASE, DON NOT REMOVE THIS COPYRIGHT */}
+            {/* Developed by Rafael Soares (https://github.com/rsoaresdev) */}
+            {/* ---------------------------------------------------------------- */}
 
-          <p className="text-xs text-gray-500 mt-2">
-            {locale === "en" ? "Made with ❤️ by " : "Feito com ❤️ por "}
-            <a
-              href="https://github.com/rsoaresdev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors"
-            >
-              Rafael Soares
-            </a>
-          </p>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-gray-500">
+                {locale === "en" ? "Developed with " : "Desenvolvido com "}
+              </span>
+              <span className="text-red-500 animate-heartbeat">❤️</span>
+              <span className="text-xs text-gray-500">
+                {locale === "en" ? "by " : "por "}
+              </span>
+              <a
+                href="https://github.com/rsoaresdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+              >
+                Rafael Soares
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

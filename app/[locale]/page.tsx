@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import AnimatedStats from "@/components/animated-stats";
 import HeroSection from "@/components/hero-section";
 import FeaturesSection from "@/components/features-section";
 import SchoolImages from "@/components/school-images";
 import TestimonialsCarousel from "@/components/testimonials-carousel";
 import BiginForm from "@/components/bigin-form";
 import CoursesSection from "@/components/courses-section";
+import HeroCta from "@/components/hero-cta";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -30,9 +30,9 @@ export default async function Home({ params }: PageProps) {
   return (
     <div className="relative bg-white">
       <HeroSection />
-      <AnimatedStats />
       <FeaturesSection />
-      <CoursesSection locale={locale} />
+      <HeroCta />
+      <CoursesSection />
       <SchoolImages />
       <TestimonialsCarousel />
       <BiginForm
