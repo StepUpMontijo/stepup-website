@@ -19,10 +19,9 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Transforme o seu futuro com o inglês",
-      "subtitle": "Descubra uma nova forma de aprender inglês, com professores qualificados e metodologia comprovada",
+      "title": "Transforme o seu futuro com o inglês!",
+      "subtitle": "Descubra uma nova forma de aprender inglês, com professores qualificados e metodologia comprovada.",
       "cta": "Marque uma Aula Grátis",
-      "secondary_cta": "Saiba Mais",
       "stats": {
         "satisfaction": "Satisfação dos alunos",
         "years": "Anos de experiência",
@@ -550,7 +549,7 @@
     }
   },
   "LeadCapture": {
-    "title": "Transforme o seu Inglês",
+    "title": "Transforme o seu Inglês!",
     "subtitle": "Descubra como a StepUp pode ajudá-lo a alcançar a fluência que sempre desejou. Marque uma aula experimental gratuita e comece a sua jornada hoje!",
     "features": {
       "free": "Primeira aula totalmente grátis",

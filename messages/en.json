@@ -19,10 +19,9 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Unlock Your Future with English",
-      "subtitle": "Experience a fresh approach to learning English with expert teachers and proven methods",
+      "title": "Unlock Your Future with English!",
+      "subtitle": "Experience a fresh approach to learning English with expert teachers and proven methods.",
       "cta": "Book a Free Class",
-      "secondary_cta": "Learn More",
       "stats": {
         "satisfaction": "Student satisfaction rate",
         "years": "Years of expertise",

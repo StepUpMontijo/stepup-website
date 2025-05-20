@@ -22,12 +22,12 @@ export default function Navbar() {
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
@@ -74,18 +74,18 @@ export default function Navbar() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
             <Image
-              src="/logo_black.png"
+              src="/logo_rounded.png"
               alt="Step Up Idiomas"
-              width={150}
-              height={40}
-              className="h-12 w-auto"
+              width={250}
+              height={75}
+              className="h-20 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center gap-12">
-              <Link
+              {/* <Link
                 href={`/${locale}/about`}
                 className={`text-base font-medium transition-colors hover:text-blue-600 ${
                   pathname.includes("/about")
@@ -96,7 +96,7 @@ export default function Navbar() {
                 }`}
               >
                 {t("about")}
-              </Link>
+              </Link> */}
 
               <Link
                 href={`/${locale}/services`}
@@ -112,8 +112,8 @@ export default function Navbar() {
               </Link>
 
               {/* Courses Dropdown */}
-              <div 
-                className="relative" 
+              <div
+                className="relative"
                 ref={coursesRef}
                 onMouseEnter={() => setIsCoursesOpen(true)}
                 onMouseLeave={() => setIsCoursesOpen(false)}
@@ -222,7 +222,9 @@ export default function Navbar() {
                 <motion.span
                   className="absolute left-0 w-full h-0.5 bg-gray-900 rounded-full transform-gpu"
                   style={{ top: "30%" }}
-                  animate={isMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  animate={
+                    isMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                  }
                   transition={{ duration: 0.2 }}
                 />
                 <motion.span
@@ -234,7 +236,9 @@ export default function Navbar() {
                 <motion.span
                   className="absolute left-0 w-full h-0.5 bg-gray-900 rounded-full transform-gpu"
                   style={{ top: "70%" }}
-                  animate={isMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  animate={
+                    isMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                  }
                   transition={{ duration: 0.2 }}
                 />
               </div>
@@ -267,14 +271,14 @@ export default function Navbar() {
 
                   {/* Main Navigation */}
                   <div className="space-y-6">
-                    <Link
+                    {/* <Link
                       href={`/${locale}/about`}
                       className="flex items-center justify-between py-3 text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors border-b border-gray-100"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("about")}
                       <ChevronDown className="w-5 h-5 rotate-[-90deg] text-gray-400" />
-                    </Link>
+                    </Link> */}
 
                     <Link
                       href={`/${locale}/services`}
@@ -287,7 +291,9 @@ export default function Navbar() {
 
                     {/* Courses Section */}
                     <div className="py-3 space-y-4 border-b border-gray-100">
-                      <p className="text-lg font-medium text-gray-900">{t("courses")}</p>
+                      <p className="text-lg font-medium text-gray-900">
+                        {t("courses")}
+                      </p>
                       <div className="space-y-3 pl-4">
                         <Link
                           href={`/${locale}/courses/children`}
@@ -325,7 +331,9 @@ export default function Navbar() {
 
                   {/* Language Switcher */}
                   <div className="pt-6">
-                    <p className="text-sm font-medium text-gray-500 mb-4">{locale === "pt" ? "Idioma" : "Language"}</p>
+                    <p className="text-sm font-medium text-gray-500 mb-4">
+                      {locale === "pt" ? "Idioma" : "Language"}
+                    </p>
                     <div className="flex gap-4">
                       <Link
                         href="/pt"

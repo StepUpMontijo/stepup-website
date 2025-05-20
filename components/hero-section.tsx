@@ -35,96 +35,48 @@ export default function HeroSection() {
 
   if (!isMounted) {
     return (
-      <section className="relative py-32 md:py-40 flex items-center justify-center overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white z-10" />
+      <section className="relative h-screen max-w-screen-2xl mx-auto flex items-center justify-center overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-white z-10" />
       </section>
     );
   }
 
   return (
-    <section className="relative pt-32 pb-8 md:pt-40 md:pb-12 flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative h-screen max-w-screen-2xl mx-auto flex items-center justify-center overflow-hidden bg-white">
       {/* Background gradient */}
-      <div className="absolute inset-0 z-[1]" />
+      <div className="absolute inset-0 bg-white z-[1]" />
 
-      {/* Floating images - behind the content */}
-      <div className="absolute inset-0 z-[0] max-w-[1400px] mx-auto">
-        {/* Left shape - hidden on tablet and below */}
-        <motion.div
-          animate={{
-            rotate: [0, 10, 0, -10, 0],
-            scale: [1, 1.02, 1],
-          }}
-          transition={{
-            rotate: {
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            scale: {
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          className="absolute left-0 top-[60%] w-[450px] h-[300px] hidden md:block"
-        >
+      {/* Hero image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="absolute bottom-0 right-0 w-[800px] h-[800px] z-[2] hidden lg:block"
+      >
+        <div className="relative w-full h-full hidden xl:block">
           <Image
-            src="/images/hero/shape-1.png"
-            alt="Abstract shape"
-            width={450}
-            height={300}
-            className="w-full h-full object-contain select-none pointer-events-none opacity-100"
+            src="/hero.jpg"
+            alt="Hero image"
+            fill
+            className="object-cover"
             priority
             loading="eager"
-            sizes="(max-width: 768px) 100vw, 450px"
+            sizes="(max-width: 1200px) 100vw, 800px"
           />
-        </motion.div>
-
-        {/* Right shape */}
-        <motion.div
-          animate={{
-            rotate: [0, -10, 0, 10, 0],
-            scale: [1, 1.02, 1],
-          }}
-          transition={{
-            rotate: {
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            scale: {
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            },
-          }}
-          className="absolute right-0 top-[60%] w-[450px] h-[300px] hidden md:block"
-        >
-          <Image
-            src="/images/hero/shape-2.png"
-            alt="Abstract shape"
-            width={450}
-            height={300}
-            className="w-full h-full object-contain select-none pointer-events-none opacity-100"
-            priority
-            loading="eager"
-            sizes="(max-width: 768px) 100vw, 450px"
-          />
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       {/* Hero content */}
-      <div className="container mx-auto px-4 relative z-[2]">
-        <div className="max-w-6xl mx-auto relative">
+      <div className="container mx-auto px-4 relative z-[3]">
+        <div className="max-w-4xl relative">
           {/* Central content */}
-          <div className="text-center relative z-20 mt-20">
+          <div className="relative z-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#000F47] mb-6 font-display">
+              <h1 className="text-6xl lg:text-7xl font-bold text-[#000F47] mb-6 font-display">
                 <span className="relative inline-block">
                   <HandwrittenUnderline
                     text={locale === "pt" ? "Transforme" : "Transform"}
@@ -135,10 +87,10 @@ export default function HeroSection() {
                   />
                 </span>{" "}
                 {locale === "pt"
-                  ? "o seu futuro com o inglês"
-                  : "your future with English"}
+                  ? "o seu futuro com o inglês!"
+                  : "your future with English!"}
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-display">
+              <p className="text-2xl text-gray-600 mb-12 max-w-3xl font-display">
                 {t("hero.subtitle")}
               </p>
             </motion.div>
@@ -148,7 +100,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -162,22 +114,13 @@ export default function HeroSection() {
                   {t("hero.cta")}
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto"
-              >
-                <Link
-                  href={`/${locale}/about`}
-                  className="block w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium py-4 px-8 rounded-full border-2 border-gray-200 transition-all"
-                >
-                  {t("hero.secondary_cta")}
-                </Link>
-              </motion.div>
             </motion.div>
           </div>
         </div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="absolute left-0 bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
     </section>
   );
 }

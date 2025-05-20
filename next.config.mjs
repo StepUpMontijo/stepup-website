@@ -57,7 +57,7 @@ const nextConfig = {
           },
           {
             key: "X-Frame-Options",
-            value: "SAMEORIGIN", // Changed from DENY to SAMEORIGIN to allow Zoho Bigin frames
+            value: "SAMEORIGIN",
           },
           {
             key: "X-XSS-Protection",
@@ -70,11 +70,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://www.google-analytics.com https://http.cat; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://www.google-analytics.com; form-action 'self' https://bigin.zoho.eu; frame-src 'self' https://bigin.zoho.eu https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu; object-src 'none'; report-to default; sandbox allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox;",
-          },
-          {
-            key: "Report-To",
-            value: '{"group":"default","max_age":31536000,"endpoints":[{"url":"/api/csp-report"}]}',
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://eu.bigin.online; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://eu.bigin.online; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://eu.bigin.online; form-action 'self' https://bigin.zoho.eu https://eu.bigin.online; frame-src 'self' https://bigin.zoho.eu https://eu.bigin.online; frame-ancestors 'self' https://bigin.zoho.eu https://eu.bigin.online; object-src 'none';",
           },
           {
             key: "X-Permitted-Cross-Domain-Policies",
@@ -85,22 +81,8 @@ const nextConfig = {
             value: "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()",
           },
           {
-            key: "Expect-CT",
-            value: "max-age=86400, enforce",
-          },
-          {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        // Exception for the Zoho Bigin script
-        source: "/_next/script/(.*)",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/javascript",
           },
         ],
       },
