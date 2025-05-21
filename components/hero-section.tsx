@@ -53,9 +53,9 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute bottom-0 right-0 w-[800px] h-[800px] z-[2] hidden lg:block"
       >
-        <div className="relative w-full h-full hidden xl:block">
+        <div className="relative w-full h-full hidden xl:block translate-y-6">
           <Image
-            src="/hero.jpg"
+            src="/hero.webp"
             alt="Hero image"
             fill
             className="object-cover"
