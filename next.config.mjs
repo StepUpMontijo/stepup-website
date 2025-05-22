@@ -70,7 +70,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://eu.bigin.online; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://eu.bigin.online; font-src 'self' data:; connect-src 'self' https://bigin.zoho.eu https://eu.bigin.online; form-action 'self' https://bigin.zoho.eu https://eu.bigin.online; frame-src 'self' https://bigin.zoho.eu https://eu.bigin.online; frame-ancestors 'self' https://bigin.zoho.eu https://eu.bigin.online; object-src 'none';",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bigin.zoho.eu https://eu.bigin.online https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://*.googleapis.com; img-src 'self' data: https://placehold.co https://bigin.zoho.eu https://eu.bigin.online https://http.cat https://*.google.com https://*.googleapis.com https://*.gstatic.com; font-src 'self' data: https://*.gstatic.com; connect-src 'self' https://bigin.zoho.eu https://eu.bigin.online https://*.google.com; form-action 'self' https://bigin.zoho.eu https://eu.bigin.online; frame-src 'self' https://bigin.zoho.eu https://eu.bigin.online https://www.google.com; frame-ancestors 'self' https://bigin.zoho.eu https://eu.bigin.online; object-src 'none';",
           },
           {
             key: "X-Permitted-Cross-Domain-Policies",
