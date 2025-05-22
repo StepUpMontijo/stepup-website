@@ -51,17 +51,17 @@ export default function HeroSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute bottom-0 right-0 w-[800px] h-[800px] z-[2] hidden lg:block"
+        className="absolute bottom-0 right-0 w-full md:w-[600px] lg:w-[800px] h-[400px] md:h-[600px] lg:h-[800px] z-[2]"
       >
-        <div className="relative w-full h-full hidden xl:block translate-y-6">
+        <div className="relative w-full h-full translate-y-6">
           <Image
             src="/hero.webp"
             alt="Hero image"
             fill
-            className="object-cover"
+            className="object-cover object-top md:object-center opacity-30 md:opacity-100"
             priority
             loading="eager"
-            sizes="(max-width: 1200px) 100vw, 800px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 600px, 800px"
           />
         </div>
       </motion.div>
@@ -76,7 +76,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-6xl lg:text-7xl font-bold text-[#000F47] mb-6 font-display">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#000F47] mb-6 font-display">
                 <span className="relative inline-block">
                   <HandwrittenUnderline
                     text={locale === "pt" ? "Transforme" : "Transform"}
@@ -86,9 +86,18 @@ export default function HeroSection() {
                     delay={0.5}
                   />
                 </span>{" "}
-                {locale === "pt"
-                  ? "o seu futuro com o inglês!"
-                  : "your future with English!"}
+                {locale === "pt" ? (
+                  <>
+                    o seu <br className="md:hidden" />
+                    <span className="block md:inline">futuro com o {text}</span>
+                    <span className="invisible md:visible">!</span>
+                  </>
+                ) : (
+                  <>
+                    your <br className="md:hidden" />
+                    <span className="block md:inline">future with English!</span>
+                  </>
+                )}
               </h1>
               <p className="text-2xl text-gray-600 mb-12 max-w-3xl font-display">
                 {t("hero.subtitle")}
